@@ -333,6 +333,839 @@
       "userProperties": [],
       "name": "motor_run_update2",
       "implementationType": "native"
+    },
+    {
+      "objID": "448575e1-e805-4cee-d7c9-b5daf9dec56f",
+      "components": [
+        {
+          "objID": "a96f690f-1249-424d-85e1-fe08e53c9ab0",
+          "type": "WatchVariableActionComponent",
+          "left": 1,
+          "top": 5,
+          "width": 123,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "variable": "MotorSV0"
+        },
+        {
+          "objID": "5f021d8b-5441-4ae5-f272-7ee96e4fd5af",
+          "type": "WatchVariableActionComponent",
+          "left": 1,
+          "top": 76,
+          "width": 123,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "variable": "MotorSV1"
+        },
+        {
+          "objID": "e8130323-f7a3-4bf9-bc94-e138d55b5bba",
+          "type": "WatchVariableActionComponent",
+          "left": 1,
+          "top": 149,
+          "width": 123,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "variable": "MotorSV2"
+        },
+        {
+          "objID": "a2dadd85-5e5d-4535-f1ff-de5229efa1c8",
+          "type": "SetVariableActionComponent",
+          "left": 222,
+          "top": 2,
+          "width": 220,
+          "height": 57,
+          "customInputs": [],
+          "customOutputs": [],
+          "entries": [
+            {
+              "objID": "39ace39f-6b73-43b3-e5e8-b01f5d487267",
+              "variable": "Motors_Conf[0].SV",
+              "value": "MotorSV0"
+            }
+          ]
+        },
+        {
+          "objID": "9e8c30a8-bec9-4f2e-c051-abee69820779",
+          "type": "SetVariableActionComponent",
+          "left": 222,
+          "top": 76,
+          "width": 220,
+          "height": 57,
+          "customInputs": [],
+          "customOutputs": [],
+          "entries": [
+            {
+              "objID": "c6aa7b4f-5afc-4a98-9660-7843f1e1fb27",
+              "variable": "Motors_Conf[1].SV",
+              "value": "MotorSV1"
+            }
+          ]
+        },
+        {
+          "objID": "927f9e71-e000-4b24-e0a3-2d13454b6f30",
+          "type": "SetVariableActionComponent",
+          "left": 222,
+          "top": 149,
+          "width": 220,
+          "height": 57,
+          "customInputs": [],
+          "customOutputs": [],
+          "entries": [
+            {
+              "objID": "22ccbc4f-41df-45e6-fd25-cf9486ab0e30",
+              "variable": "Motors_Conf[2].SV",
+              "value": "MotorSV2"
+            }
+          ]
+        },
+        {
+          "objID": "a03e083a-2cc9-4966-e155-7129fbfa96f8",
+          "type": "WatchVariableActionComponent",
+          "left": 1,
+          "top": 276,
+          "width": 148,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "variable": "Motors_PV[0]"
+        },
+        {
+          "objID": "b0e6c2e4-2a11-4784-a595-ec807dd83c4e",
+          "type": "WatchVariableActionComponent",
+          "left": 1,
+          "top": 345,
+          "width": 148,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "variable": "Motors_PV[1]"
+        },
+        {
+          "objID": "27202652-8827-4442-9dab-2e4aaa201570",
+          "type": "WatchVariableActionComponent",
+          "left": 1,
+          "top": 416,
+          "width": 148,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "variable": "Motors_PV[2]"
+        },
+        {
+          "objID": "aa8c4754-d349-4c6a-dfdb-b8a32ebcd523",
+          "type": "SetVariableActionComponent",
+          "left": 223,
+          "top": 276,
+          "width": 189,
+          "height": 57,
+          "customInputs": [],
+          "customOutputs": [],
+          "entries": [
+            {
+              "objID": "3af716ea-726b-4adf-8dbb-77e29d318b71",
+              "variable": "MotorPV0",
+              "value": "Motors_PV[0]"
+            }
+          ]
+        },
+        {
+          "objID": "4dc60cf8-6923-4d69-8cf3-6adaa9a6890b",
+          "type": "SetVariableActionComponent",
+          "left": 223,
+          "top": 345,
+          "width": 189,
+          "height": 57,
+          "customInputs": [],
+          "customOutputs": [],
+          "entries": [
+            {
+              "objID": "391cc7b9-f6fd-4bb6-d2ac-0648b808f15b",
+              "variable": "MotorPV1",
+              "value": "Motors_PV[1]"
+            }
+          ]
+        },
+        {
+          "objID": "cf3709a7-cbe1-4c6b-cba5-496cd3d5b149",
+          "type": "SetVariableActionComponent",
+          "left": 223,
+          "top": 416,
+          "width": 189,
+          "height": 57,
+          "customInputs": [],
+          "customOutputs": [],
+          "entries": [
+            {
+              "objID": "230083d2-1b17-479f-bbc8-37b3d14b237b",
+              "variable": "MotorPV2",
+              "value": "Motors_PV[2]"
+            }
+          ]
+        },
+        {
+          "objID": "f08281a5-a768-4d38-c9d0-427f76566fa0",
+          "type": "WatchVariableActionComponent",
+          "left": 1,
+          "top": 539,
+          "width": 129,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "variable": "MotorRun0"
+        },
+        {
+          "objID": "e0fae21a-efb8-4aa7-a2f3-029018d7b575",
+          "type": "SetVariableActionComponent",
+          "left": 210,
+          "top": 538,
+          "width": 202,
+          "height": 57,
+          "customInputs": [],
+          "customOutputs": [],
+          "entries": [
+            {
+              "objID": "89734269-5c07-41dc-f25e-7551a031d730",
+              "variable": "Motors_Run[0]",
+              "value": "MotorRun0"
+            }
+          ]
+        },
+        {
+          "objID": "c9f17634-9b8e-4140-991e-9db9ea543214",
+          "type": "WatchVariableActionComponent",
+          "left": 1,
+          "top": 610,
+          "width": 129,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "variable": "MotorRun1"
+        },
+        {
+          "objID": "3b0e4c17-8530-49c7-8403-d5663886489e",
+          "type": "SetVariableActionComponent",
+          "left": 210,
+          "top": 609,
+          "width": 202,
+          "height": 57,
+          "customInputs": [],
+          "customOutputs": [],
+          "entries": [
+            {
+              "objID": "9f18a16a-d37e-4e70-d419-e604fdf04ff3",
+              "variable": "Motors_Run[1]",
+              "value": "MotorRun1"
+            }
+          ]
+        },
+        {
+          "objID": "8690f180-0f27-4340-e4fd-b9c8ea6b7486",
+          "type": "WatchVariableActionComponent",
+          "left": 1,
+          "top": 684,
+          "width": 129,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "variable": "MotorRun2"
+        },
+        {
+          "objID": "46c0aee1-eae4-4109-876a-f8dacc50bfd8",
+          "type": "SetVariableActionComponent",
+          "left": 210,
+          "top": 683,
+          "width": 202,
+          "height": 57,
+          "customInputs": [],
+          "customOutputs": [],
+          "entries": [
+            {
+              "objID": "21c41e7c-5765-4c77-aadd-92ff3d9892bb",
+              "variable": "Motors_Run[2]",
+              "value": "MotorRun2"
+            }
+          ]
+        },
+        {
+          "objID": "df3d5eed-9d72-485d-dd46-dfcdf303bce3",
+          "type": "WatchVariableActionComponent",
+          "left": 1,
+          "top": 786,
+          "width": 154,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "variable": "Motors_Run[0]"
+        },
+        {
+          "objID": "b7dcaa70-0fca-40c3-ffb6-c732ce05eb6f",
+          "type": "SetVariableActionComponent",
+          "left": 582,
+          "top": 788,
+          "width": 202,
+          "height": 57,
+          "customInputs": [],
+          "customOutputs": [],
+          "entries": [
+            {
+              "objID": "eb19721f-60cf-40e5-fbbd-042e1ea962a0",
+              "variable": "MotorRun0",
+              "value": "Motors_Run[0]"
+            }
+          ]
+        },
+        {
+          "objID": "426458a9-dab3-4401-cc99-8794ca41932c",
+          "type": "EvalExprActionComponent",
+          "left": 210,
+          "top": 788,
+          "width": 219,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "expression": "Motors_Run[0] != MotorRun0"
+        },
+        {
+          "objID": "96924bbc-7f1e-44d6-bfdb-128b33209b6f",
+          "type": "IsTrueActionComponent",
+          "left": 457,
+          "top": 788,
+          "width": 87,
+          "height": 70,
+          "customInputs": [
+            {
+              "objID": "cf684857-ed7a-497b-b0cf-72b939d02436",
+              "name": "value",
+              "type": "any"
+            }
+          ],
+          "customOutputs": [],
+          "value": "value"
+        },
+        {
+          "objID": "56228a9f-9b65-4ad5-d38c-5a99db2ba437",
+          "type": "WatchVariableActionComponent",
+          "left": 1,
+          "top": 871,
+          "width": 154,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "variable": "Motors_Run[1]"
+        },
+        {
+          "objID": "53f68215-55ee-4e98-ece0-841856a640e5",
+          "type": "SetVariableActionComponent",
+          "left": 582,
+          "top": 873,
+          "width": 202,
+          "height": 57,
+          "customInputs": [],
+          "customOutputs": [],
+          "entries": [
+            {
+              "objID": "f4acafa3-d01d-480d-fb65-a5a926fdd3e2",
+              "variable": "MotorRun1",
+              "value": "Motors_Run[1]"
+            }
+          ]
+        },
+        {
+          "objID": "a5a95452-bbff-40af-97b1-d3c0549dfc45",
+          "type": "EvalExprActionComponent",
+          "left": 210,
+          "top": 873,
+          "width": 219,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "expression": "Motors_Run[1] != MotorRun1"
+        },
+        {
+          "objID": "7fd79fef-704c-42b3-da8c-fb6e8a424d75",
+          "type": "IsTrueActionComponent",
+          "left": 457,
+          "top": 873,
+          "width": 87,
+          "height": 70,
+          "customInputs": [
+            {
+              "objID": "d60946a9-c9a5-404b-aaaf-ee994cc99178",
+              "name": "value",
+              "type": "any"
+            }
+          ],
+          "customOutputs": [],
+          "value": "value"
+        },
+        {
+          "objID": "0b497516-5687-48e6-9b5c-8d73385d878a",
+          "type": "WatchVariableActionComponent",
+          "left": 1,
+          "top": 953,
+          "width": 154,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "variable": "Motors_Run[2]"
+        },
+        {
+          "objID": "a1bc6707-2b6d-491b-beb3-1dd528afdef3",
+          "type": "SetVariableActionComponent",
+          "left": 582,
+          "top": 955,
+          "width": 202,
+          "height": 57,
+          "customInputs": [],
+          "customOutputs": [],
+          "entries": [
+            {
+              "objID": "4309a5ce-504f-48f1-bd64-23c70dc4c5f8",
+              "variable": "MotorRun2",
+              "value": "Motors_Run[2]"
+            }
+          ]
+        },
+        {
+          "objID": "ab0255b2-e26a-46fc-a344-1c8f85d164f8",
+          "type": "EvalExprActionComponent",
+          "left": 210,
+          "top": 955,
+          "width": 219,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "expression": "Motors_Run[2] != MotorRun2"
+        },
+        {
+          "objID": "200a5eed-41c5-4ab5-c93f-cd54133a76b2",
+          "type": "IsTrueActionComponent",
+          "left": 457,
+          "top": 955,
+          "width": 87,
+          "height": 70,
+          "customInputs": [
+            {
+              "objID": "c43514cb-2708-4494-aabe-352c048884ee",
+              "name": "value",
+              "type": "any"
+            }
+          ],
+          "customOutputs": [],
+          "value": "value"
+        },
+        {
+          "objID": "e6feafef-e1fc-408c-c64a-b177b22dbe07",
+          "type": "CallActionActionComponent",
+          "left": 958,
+          "top": 276,
+          "width": 147,
+          "height": 24,
+          "customInputs": [],
+          "customOutputs": [],
+          "action": "motor_pps_update0",
+          "userPropertyValues": {
+            "objID": "39cdbbaf-e344-4f65-aab6-12453e5494d4",
+            "values": {}
+          }
+        },
+        {
+          "objID": "8e25dcea-879e-4305-c9a8-4dd740bf9499",
+          "type": "CallActionActionComponent",
+          "left": 958,
+          "top": 345,
+          "width": 147,
+          "height": 24,
+          "customInputs": [],
+          "customOutputs": [],
+          "action": "motor_pps_update1",
+          "userPropertyValues": {
+            "objID": "1c21ab66-e5a6-4691-a6df-34a36cdce7fc",
+            "values": {}
+          }
+        },
+        {
+          "objID": "17259c2b-6b24-4e6b-e658-44b5da00217f",
+          "type": "CallActionActionComponent",
+          "left": 958,
+          "top": 416,
+          "width": 147,
+          "height": 24,
+          "customInputs": [],
+          "customOutputs": [],
+          "action": "motor_pps_update2",
+          "userPropertyValues": {
+            "objID": "008b87cc-7179-4c3f-d631-8e2a2749cc2f",
+            "values": {}
+          }
+        },
+        {
+          "objID": "4c1c30a3-56d2-4825-d34b-45ee1af1425d",
+          "type": "CallActionActionComponent",
+          "left": 815,
+          "top": 788,
+          "width": 145,
+          "height": 24,
+          "customInputs": [],
+          "customOutputs": [],
+          "action": "motor_run_update0",
+          "userPropertyValues": {
+            "objID": "e0e585ea-82cc-495a-a327-161e32fd6787",
+            "values": {}
+          }
+        },
+        {
+          "objID": "c342d4ea-b0fa-49bf-8801-d3fbf76ee231",
+          "type": "CallActionActionComponent",
+          "left": 815,
+          "top": 873,
+          "width": 145,
+          "height": 24,
+          "customInputs": [],
+          "customOutputs": [],
+          "action": "motor_run_update1",
+          "userPropertyValues": {
+            "objID": "9ad8c653-70ee-4ca5-f5f2-4cf9fe0a1f01",
+            "values": {}
+          }
+        },
+        {
+          "objID": "2345c1f4-23dd-456b-deff-ff4dd8b48483",
+          "type": "CallActionActionComponent",
+          "left": 815,
+          "top": 955,
+          "width": 145,
+          "height": 24,
+          "customInputs": [],
+          "customOutputs": [],
+          "action": "motor_run_update2",
+          "userPropertyValues": {
+            "objID": "51e15292-98a8-42e2-d8d3-c009abfd22ca",
+            "values": {}
+          }
+        },
+        {
+          "objID": "d1331b91-5f54-43e8-a9f5-5d99969ee48a",
+          "type": "EvalExprActionComponent",
+          "left": 442,
+          "top": 276,
+          "width": 268,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "expression": "(MotorPV0 * Motors_Conf[0].PPR)/60"
+        },
+        {
+          "objID": "aa8715ab-c447-40c3-aaac-ba00fc489470",
+          "type": "SetVariableActionComponent",
+          "left": 738,
+          "top": 276,
+          "width": 192,
+          "height": 57,
+          "customInputs": [
+            {
+              "objID": "052058ec-30e7-45a9-c847-d43fb4b34732",
+              "name": "input",
+              "type": "integer"
+            }
+          ],
+          "customOutputs": [],
+          "entries": [
+            {
+              "objID": "0e7fd1b0-2d6f-4131-91aa-a916cdeaee32",
+              "variable": "MotorPPS0",
+              "value": "input"
+            }
+          ]
+        },
+        {
+          "objID": "18172141-c2cb-4bae-dba8-67957d04dfb9",
+          "type": "EvalExprActionComponent",
+          "left": 442,
+          "top": 345,
+          "width": 268,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "expression": "(MotorPV1 * Motors_Conf[1].PPR)/60"
+        },
+        {
+          "objID": "1178a741-3390-4666-d248-d75bf45ac814",
+          "type": "SetVariableActionComponent",
+          "left": 738,
+          "top": 345,
+          "width": 192,
+          "height": 57,
+          "customInputs": [
+            {
+              "objID": "7d103d1c-82c5-4b8f-b1b4-206220547879",
+              "name": "input",
+              "type": "integer"
+            }
+          ],
+          "customOutputs": [],
+          "entries": [
+            {
+              "objID": "784234b6-6114-4f02-dde7-a19a1b1b0507",
+              "variable": "MotorPPS1",
+              "value": "input"
+            }
+          ]
+        },
+        {
+          "objID": "18eb1ec5-ce02-4245-86f3-35d199505707",
+          "type": "EvalExprActionComponent",
+          "left": 442,
+          "top": 416,
+          "width": 268,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "expression": "(MotorPV2 * Motors_Conf[2].PPR)/60"
+        },
+        {
+          "objID": "6bdedb1d-9b2e-4230-8142-7e3baafb194b",
+          "type": "SetVariableActionComponent",
+          "left": 738,
+          "top": 416,
+          "width": 192,
+          "height": 57,
+          "customInputs": [
+            {
+              "objID": "fdd0b8de-dc22-4157-b16e-63edbe85a19e",
+              "name": "input",
+              "type": "integer"
+            }
+          ],
+          "customOutputs": [],
+          "entries": [
+            {
+              "objID": "ee477102-781c-4ad9-b4d2-c2ec1cf0d630",
+              "variable": "MotorPPS2",
+              "value": "input"
+            }
+          ]
+        }
+      ],
+      "connectionLines": [
+        {
+          "objID": "cbd3a54f-5f14-4dc6-8d21-d4343f6b15ac",
+          "source": "a96f690f-1249-424d-85e1-fe08e53c9ab0",
+          "output": "variable",
+          "target": "a2dadd85-5e5d-4535-f1ff-de5229efa1c8",
+          "input": "@seqin"
+        },
+        {
+          "objID": "6ba51aac-7c4e-4ad2-e620-ec9ef74bc9a4",
+          "source": "5f021d8b-5441-4ae5-f272-7ee96e4fd5af",
+          "output": "variable",
+          "target": "9e8c30a8-bec9-4f2e-c051-abee69820779",
+          "input": "@seqin"
+        },
+        {
+          "objID": "e3f65f25-9a30-4213-ddcf-e37f3ac6435f",
+          "source": "e8130323-f7a3-4bf9-bc94-e138d55b5bba",
+          "output": "variable",
+          "target": "927f9e71-e000-4b24-e0a3-2d13454b6f30",
+          "input": "@seqin"
+        },
+        {
+          "objID": "4e399ab1-c3b8-42fc-a469-85b1af69b859",
+          "source": "a03e083a-2cc9-4966-e155-7129fbfa96f8",
+          "output": "variable",
+          "target": "aa8c4754-d349-4c6a-dfdb-b8a32ebcd523",
+          "input": "@seqin"
+        },
+        {
+          "objID": "e9d3be3f-b09c-4c68-c082-b73aeb68b5c3",
+          "source": "b0e6c2e4-2a11-4784-a595-ec807dd83c4e",
+          "output": "variable",
+          "target": "4dc60cf8-6923-4d69-8cf3-6adaa9a6890b",
+          "input": "@seqin"
+        },
+        {
+          "objID": "e5054403-0661-4fd3-8e1f-737002068b08",
+          "source": "27202652-8827-4442-9dab-2e4aaa201570",
+          "output": "variable",
+          "target": "cf3709a7-cbe1-4c6b-cba5-496cd3d5b149",
+          "input": "@seqin"
+        },
+        {
+          "objID": "45435f3f-d482-4ee0-e1c8-31f373f9990f",
+          "source": "f08281a5-a768-4d38-c9d0-427f76566fa0",
+          "output": "variable",
+          "target": "e0fae21a-efb8-4aa7-a2f3-029018d7b575",
+          "input": "@seqin"
+        },
+        {
+          "objID": "abd681a0-a2c3-4ce6-c6c5-b26cc9239411",
+          "source": "c9f17634-9b8e-4140-991e-9db9ea543214",
+          "output": "variable",
+          "target": "3b0e4c17-8530-49c7-8403-d5663886489e",
+          "input": "@seqin"
+        },
+        {
+          "objID": "872086d9-f337-42c1-a052-2673cb0354eb",
+          "source": "8690f180-0f27-4340-e4fd-b9c8ea6b7486",
+          "output": "variable",
+          "target": "46c0aee1-eae4-4109-876a-f8dacc50bfd8",
+          "input": "@seqin"
+        },
+        {
+          "objID": "2af43bb4-25e4-4246-c827-b679fc44d535",
+          "source": "df3d5eed-9d72-485d-dd46-dfcdf303bce3",
+          "output": "variable",
+          "target": "426458a9-dab3-4401-cc99-8794ca41932c",
+          "input": "@seqin"
+        },
+        {
+          "objID": "f343e42b-23eb-4e69-d4df-3e593e74cea5",
+          "source": "426458a9-dab3-4401-cc99-8794ca41932c",
+          "output": "result",
+          "target": "96924bbc-7f1e-44d6-bfdb-128b33209b6f",
+          "input": "value"
+        },
+        {
+          "objID": "20faa58f-d4fa-4994-b4f1-faeee31fb311",
+          "source": "96924bbc-7f1e-44d6-bfdb-128b33209b6f",
+          "output": "True",
+          "target": "b7dcaa70-0fca-40c3-ffb6-c732ce05eb6f",
+          "input": "@seqin"
+        },
+        {
+          "objID": "31789e95-48c8-4315-a41a-9e1f9452d86b",
+          "source": "56228a9f-9b65-4ad5-d38c-5a99db2ba437",
+          "output": "variable",
+          "target": "a5a95452-bbff-40af-97b1-d3c0549dfc45",
+          "input": "@seqin"
+        },
+        {
+          "objID": "bd49aec6-8ddb-4c15-e636-b08af627adc0",
+          "source": "a5a95452-bbff-40af-97b1-d3c0549dfc45",
+          "output": "result",
+          "target": "7fd79fef-704c-42b3-da8c-fb6e8a424d75",
+          "input": "value"
+        },
+        {
+          "objID": "2d8f450c-1568-464c-b42e-a37238869c46",
+          "source": "7fd79fef-704c-42b3-da8c-fb6e8a424d75",
+          "output": "True",
+          "target": "53f68215-55ee-4e98-ece0-841856a640e5",
+          "input": "@seqin"
+        },
+        {
+          "objID": "3e8cc83d-a946-4a52-c366-9222008c118f",
+          "source": "0b497516-5687-48e6-9b5c-8d73385d878a",
+          "output": "variable",
+          "target": "ab0255b2-e26a-46fc-a344-1c8f85d164f8",
+          "input": "@seqin"
+        },
+        {
+          "objID": "c2940c7c-aa9b-426f-c952-fced7e3ed674",
+          "source": "ab0255b2-e26a-46fc-a344-1c8f85d164f8",
+          "output": "result",
+          "target": "200a5eed-41c5-4ab5-c93f-cd54133a76b2",
+          "input": "value"
+        },
+        {
+          "objID": "0b2efb43-f2f3-4eb6-d672-b38929b6fd10",
+          "source": "200a5eed-41c5-4ab5-c93f-cd54133a76b2",
+          "output": "True",
+          "target": "a1bc6707-2b6d-491b-beb3-1dd528afdef3",
+          "input": "@seqin"
+        },
+        {
+          "objID": "e8898d26-83a6-4bde-aabd-96a816470dbe",
+          "source": "b7dcaa70-0fca-40c3-ffb6-c732ce05eb6f",
+          "output": "@seqout",
+          "target": "4c1c30a3-56d2-4825-d34b-45ee1af1425d",
+          "input": "@seqin"
+        },
+        {
+          "objID": "1f7a6f71-3c68-44b2-e54b-56b64310d01b",
+          "source": "53f68215-55ee-4e98-ece0-841856a640e5",
+          "output": "@seqout",
+          "target": "c342d4ea-b0fa-49bf-8801-d3fbf76ee231",
+          "input": "@seqin"
+        },
+        {
+          "objID": "fcc9a16d-012f-47ff-dd22-f6fa35a9b229",
+          "source": "a1bc6707-2b6d-491b-beb3-1dd528afdef3",
+          "output": "@seqout",
+          "target": "2345c1f4-23dd-456b-deff-ff4dd8b48483",
+          "input": "@seqin"
+        },
+        {
+          "objID": "c3308762-cd6f-499c-8911-0e215dfac3ff",
+          "source": "aa8c4754-d349-4c6a-dfdb-b8a32ebcd523",
+          "output": "@seqout",
+          "target": "d1331b91-5f54-43e8-a9f5-5d99969ee48a",
+          "input": "@seqin"
+        },
+        {
+          "objID": "67b13261-fd0f-4507-f80c-ed688ddb0ebd",
+          "source": "d1331b91-5f54-43e8-a9f5-5d99969ee48a",
+          "output": "result",
+          "target": "aa8715ab-c447-40c3-aaac-ba00fc489470",
+          "input": "input"
+        },
+        {
+          "objID": "a5f3fbd8-e0ee-4b53-cbcf-cc71c2218bf0",
+          "source": "aa8715ab-c447-40c3-aaac-ba00fc489470",
+          "output": "@seqout",
+          "target": "e6feafef-e1fc-408c-c64a-b177b22dbe07",
+          "input": "@seqin"
+        },
+        {
+          "objID": "ea6f42da-c7ec-4658-e65b-a5bd709b022b",
+          "source": "18172141-c2cb-4bae-dba8-67957d04dfb9",
+          "output": "result",
+          "target": "1178a741-3390-4666-d248-d75bf45ac814",
+          "input": "input"
+        },
+        {
+          "objID": "a63ecb05-bcda-4f6a-f2e5-55a5ae76a93d",
+          "source": "18eb1ec5-ce02-4245-86f3-35d199505707",
+          "output": "result",
+          "target": "6bdedb1d-9b2e-4230-8142-7e3baafb194b",
+          "input": "input"
+        },
+        {
+          "objID": "522003ea-8f95-4023-9409-b5adeb0434f3",
+          "source": "4dc60cf8-6923-4d69-8cf3-6adaa9a6890b",
+          "output": "@seqout",
+          "target": "18172141-c2cb-4bae-dba8-67957d04dfb9",
+          "input": "@seqin"
+        },
+        {
+          "objID": "77ad0378-22c2-4b60-bb27-25d9a1eafb32",
+          "source": "cf3709a7-cbe1-4c6b-cba5-496cd3d5b149",
+          "output": "@seqout",
+          "target": "18eb1ec5-ce02-4245-86f3-35d199505707",
+          "input": "@seqin"
+        },
+        {
+          "objID": "ef3c026f-2fc7-4849-8a31-a29b2ae20be7",
+          "source": "1178a741-3390-4666-d248-d75bf45ac814",
+          "output": "@seqout",
+          "target": "8e25dcea-879e-4305-c9a8-4dd740bf9499",
+          "input": "@seqin"
+        },
+        {
+          "objID": "15b15850-5a57-4de1-ede4-92fe1ecb8abf",
+          "source": "6bdedb1d-9b2e-4230-8142-7e3baafb194b",
+          "output": "@seqout",
+          "target": "17259c2b-6b24-4e6b-e658-44b5da00217f",
+          "input": "@seqin"
+        }
+      ],
+      "localVariables": [],
+      "userProperties": [],
+      "name": "Note",
+      "implementationType": "flow"
     }
   ],
   "userPages": [
@@ -579,94 +1412,10 @@
           ]
         },
         {
-          "objID": "f73fcb7f-a90d-425f-c614-07376f049ef9",
+          "objID": "ab5f9e98-54df-4da8-bf8e-0dcf386578db",
           "type": "WatchVariableActionComponent",
           "left": 0,
-          "top": 325,
-          "width": 123,
-          "height": 54,
-          "customInputs": [],
-          "customOutputs": [],
-          "variable": "MotorSV0"
-        },
-        {
-          "objID": "b01e3f6f-75ad-4b8f-c37b-c19caa61ac00",
-          "type": "WatchVariableActionComponent",
-          "left": 0,
-          "top": 396,
-          "width": 123,
-          "height": 54,
-          "customInputs": [],
-          "customOutputs": [],
-          "variable": "MotorSV1"
-        },
-        {
-          "objID": "8bd6a19d-0cb8-4c00-df0b-184794811684",
-          "type": "WatchVariableActionComponent",
-          "left": 0,
-          "top": 469,
-          "width": 123,
-          "height": 54,
-          "customInputs": [],
-          "customOutputs": [],
-          "variable": "MotorSV2"
-        },
-        {
-          "objID": "4fb555de-c56e-41fe-d371-1d1a637fc8f7",
-          "type": "SetVariableActionComponent",
-          "left": 221,
-          "top": 322,
-          "width": 220,
-          "height": 57,
-          "customInputs": [],
-          "customOutputs": [],
-          "entries": [
-            {
-              "objID": "71501e6e-6170-49d0-fe7b-cd4235cb37d9",
-              "variable": "Motors_Conf[0].SV",
-              "value": "MotorSV0"
-            }
-          ]
-        },
-        {
-          "objID": "7058230a-7295-4dce-f1eb-cf8fc62bc775",
-          "type": "SetVariableActionComponent",
-          "left": 221,
-          "top": 396,
-          "width": 220,
-          "height": 57,
-          "customInputs": [],
-          "customOutputs": [],
-          "entries": [
-            {
-              "objID": "81f49470-bf62-4270-fd0b-1560c9a88c98",
-              "variable": "Motors_Conf[1].SV",
-              "value": "MotorSV1"
-            }
-          ]
-        },
-        {
-          "objID": "e850b243-fbf9-4124-ed1b-bc5356c69a83",
-          "type": "SetVariableActionComponent",
-          "left": 221,
-          "top": 469,
-          "width": 220,
-          "height": 57,
-          "customInputs": [],
-          "customOutputs": [],
-          "entries": [
-            {
-              "objID": "d4d2fe05-f122-4303-e470-c10a16df9b19",
-              "variable": "Motors_Conf[2].SV",
-              "value": "MotorSV2"
-            }
-          ]
-        },
-        {
-          "objID": "8926d87c-0164-4f45-fce7-7ede827eb5bb",
-          "type": "WatchVariableActionComponent",
-          "left": 0,
-          "top": 596,
+          "top": 287,
           "width": 148,
           "height": 54,
           "customInputs": [],
@@ -674,10 +1423,10 @@
           "variable": "Motors_PV[0]"
         },
         {
-          "objID": "53a784f4-46f2-4660-f5ce-356bfe4047d8",
+          "objID": "49217df1-3a69-4e3d-8c8d-be7ced32169c",
           "type": "WatchVariableActionComponent",
           "left": 0,
-          "top": 665,
+          "top": 356,
           "width": 148,
           "height": 54,
           "customInputs": [],
@@ -685,10 +1434,10 @@
           "variable": "Motors_PV[1]"
         },
         {
-          "objID": "2bbf508d-98d4-472f-f5e7-7976050f993a",
+          "objID": "0b2c5999-8c94-4339-8e58-b827f747711b",
           "type": "WatchVariableActionComponent",
           "left": 0,
-          "top": 736,
+          "top": 427,
           "width": 148,
           "height": 54,
           "customInputs": [],
@@ -696,145 +1445,208 @@
           "variable": "Motors_PV[2]"
         },
         {
-          "objID": "790e32ba-6ac8-4413-fb3a-5487fcffa4ea",
+          "objID": "f133a4c9-e978-45d9-934f-1c6f4795cbe2",
           "type": "SetVariableActionComponent",
           "left": 222,
-          "top": 596,
+          "top": 287,
           "width": 189,
           "height": 57,
           "customInputs": [],
           "customOutputs": [],
           "entries": [
             {
-              "objID": "222e734d-b399-48e5-b745-49454a247c34",
+              "objID": "c2ebbc05-d4aa-4868-bae6-75b8b1402e48",
               "variable": "MotorPV0",
               "value": "Motors_PV[0]"
             }
           ]
         },
         {
-          "objID": "90339180-9861-4648-8896-c7ce7dffe1be",
+          "objID": "0ec14c1c-962b-4266-901d-812bf3047982",
           "type": "SetVariableActionComponent",
           "left": 222,
-          "top": 665,
+          "top": 356,
           "width": 189,
           "height": 57,
           "customInputs": [],
           "customOutputs": [],
           "entries": [
             {
-              "objID": "f19bdbed-3e35-4ec0-c217-7e639c954b96",
+              "objID": "3f2f0f9d-a162-4b3c-8fc7-2d33518db593",
               "variable": "MotorPV1",
               "value": "Motors_PV[1]"
             }
           ]
         },
         {
-          "objID": "387af724-5b9e-4a45-a03f-d612c28188a1",
+          "objID": "3397bbd4-3d42-4b17-bcc8-a12a19b4daa3",
           "type": "SetVariableActionComponent",
           "left": 222,
-          "top": 736,
+          "top": 427,
           "width": 189,
           "height": 57,
           "customInputs": [],
           "customOutputs": [],
           "entries": [
             {
-              "objID": "6a068709-db71-4274-9826-488e10696dff",
+              "objID": "c9694eb3-8f01-46e0-895d-71ab17b757d2",
               "variable": "MotorPV2",
               "value": "Motors_PV[2]"
             }
           ]
         },
         {
-          "objID": "75a9b325-c653-4118-b6b2-dbb8a642c0de",
-          "type": "WatchVariableActionComponent",
-          "left": 0,
-          "top": 859,
-          "width": 129,
+          "objID": "afed0f54-f424-46d4-9289-919e701f3a4b",
+          "type": "CallActionActionComponent",
+          "left": 957,
+          "top": 287,
+          "width": 147,
+          "height": 24,
+          "customInputs": [],
+          "customOutputs": [],
+          "action": "motor_pps_update0",
+          "userPropertyValues": {
+            "objID": "ad92f06a-8eb4-45cb-91d3-c9f9239cbb02",
+            "values": {}
+          }
+        },
+        {
+          "objID": "fa44f1dc-f652-41eb-c227-1670d9049b26",
+          "type": "CallActionActionComponent",
+          "left": 957,
+          "top": 356,
+          "width": 147,
+          "height": 24,
+          "customInputs": [],
+          "customOutputs": [],
+          "action": "motor_pps_update1",
+          "userPropertyValues": {
+            "objID": "9803dc66-ee03-494f-876b-18eb84d6ad20",
+            "values": {}
+          }
+        },
+        {
+          "objID": "3a2bef69-1645-44b8-fdf0-dc75d17a1617",
+          "type": "CallActionActionComponent",
+          "left": 957,
+          "top": 427,
+          "width": 147,
+          "height": 24,
+          "customInputs": [],
+          "customOutputs": [],
+          "action": "motor_pps_update2",
+          "userPropertyValues": {
+            "objID": "63536f07-3f05-49b8-b87a-059a63d27c41",
+            "values": {}
+          }
+        },
+        {
+          "objID": "25190b5a-3e2d-4b81-f437-daf3d0e65997",
+          "type": "EvalExprActionComponent",
+          "left": 441,
+          "top": 287,
+          "width": 268,
           "height": 54,
           "customInputs": [],
           "customOutputs": [],
-          "variable": "MotorRun0"
+          "expression": "(MotorPV0 * Motors_Conf[0].PPR)/60"
         },
         {
-          "objID": "ef17699f-f9ad-4512-9b5c-d7abae10379b",
+          "objID": "ff54216f-e090-4df2-fa51-dfec239886ed",
           "type": "SetVariableActionComponent",
-          "left": 209,
-          "top": 858,
-          "width": 202,
+          "left": 737,
+          "top": 287,
+          "width": 192,
           "height": 57,
-          "customInputs": [],
+          "customInputs": [
+            {
+              "objID": "c5ea5f9f-65dc-4af4-9f1e-ca87e986a04f",
+              "name": "input",
+              "type": "integer"
+            }
+          ],
           "customOutputs": [],
           "entries": [
             {
-              "objID": "6094461f-d555-462f-ad3c-e2d1cc1132b5",
-              "variable": "Motors_Run[0]",
-              "value": "MotorRun0"
+              "objID": "dfcf5b41-ec4b-46e4-9c76-858def34a227",
+              "variable": "MotorPPS0",
+              "value": "input"
             }
           ]
         },
         {
-          "objID": "a00ebfb9-3b19-40e5-fbc7-7bd233b0fe07",
-          "type": "WatchVariableActionComponent",
-          "left": 0,
-          "top": 930,
-          "width": 129,
+          "objID": "9287818c-19e4-4947-b604-2d892be61668",
+          "type": "EvalExprActionComponent",
+          "left": 441,
+          "top": 356,
+          "width": 268,
           "height": 54,
           "customInputs": [],
           "customOutputs": [],
-          "variable": "MotorRun1"
+          "expression": "(MotorPV1 * Motors_Conf[1].PPR)/60"
         },
         {
-          "objID": "b33e7a2e-faf0-4c4d-f0ba-65b70854b054",
+          "objID": "e39199d6-dfa5-4b4b-873b-ae293164995c",
           "type": "SetVariableActionComponent",
-          "left": 209,
-          "top": 929,
-          "width": 202,
+          "left": 737,
+          "top": 356,
+          "width": 192,
           "height": 57,
-          "customInputs": [],
+          "customInputs": [
+            {
+              "objID": "60de9fd1-44e0-4bdf-bb55-ce964964ff25",
+              "name": "input",
+              "type": "integer"
+            }
+          ],
           "customOutputs": [],
           "entries": [
             {
-              "objID": "77cfa56a-2e33-4efd-afb6-0964096e7e2c",
-              "variable": "Motors_Run[1]",
-              "value": "MotorRun1"
+              "objID": "357387cd-8d05-4910-c1d8-c89f64b34d76",
+              "variable": "MotorPPS1",
+              "value": "input"
             }
           ]
         },
         {
-          "objID": "2d19468b-5937-46c3-807a-cb049aadf21b",
-          "type": "WatchVariableActionComponent",
-          "left": 0,
-          "top": 1004,
-          "width": 129,
+          "objID": "4a531098-f7db-4448-ee26-72e967d9badf",
+          "type": "EvalExprActionComponent",
+          "left": 441,
+          "top": 427,
+          "width": 268,
           "height": 54,
           "customInputs": [],
           "customOutputs": [],
-          "variable": "MotorRun2"
+          "expression": "(MotorPV2 * Motors_Conf[2].PPR)/60"
         },
         {
-          "objID": "dca36530-a18a-4a60-efbc-d6c92beea927",
+          "objID": "b0ce77b6-9a9f-4c8b-948c-e89df8ffead4",
           "type": "SetVariableActionComponent",
-          "left": 209,
-          "top": 1003,
-          "width": 202,
+          "left": 737,
+          "top": 427,
+          "width": 192,
           "height": 57,
-          "customInputs": [],
+          "customInputs": [
+            {
+              "objID": "dbb6e21e-69e4-4147-c995-ecf58d6ab213",
+              "name": "input",
+              "type": "integer"
+            }
+          ],
           "customOutputs": [],
           "entries": [
             {
-              "objID": "b351cb0a-336e-47f0-9eec-38305e56ad2a",
-              "variable": "Motors_Run[2]",
-              "value": "MotorRun2"
+              "objID": "4fbc1fa3-f4e7-420c-a9fa-003ddfa92912",
+              "variable": "MotorPPS2",
+              "value": "input"
             }
           ]
         },
         {
-          "objID": "3d57897c-f461-4e53-88dc-0d81996d06f0",
+          "objID": "90c5a5b1-c6bf-4766-8817-23a6debcecc3",
           "type": "WatchVariableActionComponent",
           "left": 0,
-          "top": 1106,
+          "top": 520,
           "width": 154,
           "height": 54,
           "customInputs": [],
@@ -842,27 +1654,27 @@
           "variable": "Motors_Run[0]"
         },
         {
-          "objID": "c473769f-359c-46bd-b85e-ba4ef04dc0f5",
+          "objID": "d12c03f7-2f74-42be-b8b2-3d6905e38ec0",
           "type": "SetVariableActionComponent",
           "left": 581,
-          "top": 1108,
+          "top": 522,
           "width": 202,
           "height": 57,
           "customInputs": [],
           "customOutputs": [],
           "entries": [
             {
-              "objID": "b369eceb-915e-4a77-b3e4-73b69103c936",
+              "objID": "b0a1e976-0b04-4492-c82a-fd645589b9d7",
               "variable": "MotorRun0",
               "value": "Motors_Run[0]"
             }
           ]
         },
         {
-          "objID": "b0e961ef-239b-4468-b577-cf704fc5ff27",
+          "objID": "9449e79a-1614-401a-890f-e88b86bbb39d",
           "type": "EvalExprActionComponent",
           "left": 209,
-          "top": 1108,
+          "top": 522,
           "width": 219,
           "height": 54,
           "customInputs": [],
@@ -870,15 +1682,15 @@
           "expression": "Motors_Run[0] != MotorRun0"
         },
         {
-          "objID": "d1e0ae74-f851-4cb2-a4c2-56e84c3bae50",
+          "objID": "aef39f39-b04b-45e5-fb2e-0a0861986efc",
           "type": "IsTrueActionComponent",
           "left": 456,
-          "top": 1108,
+          "top": 522,
           "width": 87,
           "height": 70,
           "customInputs": [
             {
-              "objID": "ca1807db-26f7-428e-d83d-d31fcc6798ab",
+              "objID": "3edbef9f-2e7c-438f-dba9-e458b8105301",
               "name": "value",
               "type": "any"
             }
@@ -887,10 +1699,10 @@
           "value": "value"
         },
         {
-          "objID": "fdadbaf0-3038-4b8b-c2d0-67c6fb92a022",
+          "objID": "21544aa8-5122-4844-befa-1aad9a084fb4",
           "type": "WatchVariableActionComponent",
           "left": 0,
-          "top": 1191,
+          "top": 605,
           "width": 154,
           "height": 54,
           "customInputs": [],
@@ -898,27 +1710,27 @@
           "variable": "Motors_Run[1]"
         },
         {
-          "objID": "1f18ed6e-92fa-4c49-bf2c-d8b7df543354",
+          "objID": "279c0f4b-3baa-4d4a-b06d-f42ccd4b62a6",
           "type": "SetVariableActionComponent",
           "left": 581,
-          "top": 1193,
+          "top": 607,
           "width": 202,
           "height": 57,
           "customInputs": [],
           "customOutputs": [],
           "entries": [
             {
-              "objID": "506e3270-04df-4f9e-daad-dd78ce4a6e92",
+              "objID": "e5f64714-3d89-43fd-ddcb-98b930ef9446",
               "variable": "MotorRun1",
               "value": "Motors_Run[1]"
             }
           ]
         },
         {
-          "objID": "72532e1f-fe58-421e-8039-6f83559f1220",
+          "objID": "24eb3293-f273-4597-fc77-b43bc0369f97",
           "type": "EvalExprActionComponent",
           "left": 209,
-          "top": 1193,
+          "top": 607,
           "width": 219,
           "height": 54,
           "customInputs": [],
@@ -926,15 +1738,15 @@
           "expression": "Motors_Run[1] != MotorRun1"
         },
         {
-          "objID": "7939c44d-9cb9-4999-979c-8fbb31776b36",
+          "objID": "aed06295-53ce-46c9-8432-f27b433ac198",
           "type": "IsTrueActionComponent",
           "left": 456,
-          "top": 1193,
+          "top": 607,
           "width": 87,
           "height": 70,
           "customInputs": [
             {
-              "objID": "10c535bb-f0e5-453b-baf8-3a2002182358",
+              "objID": "21de0314-29fb-4ed4-d559-e4142cf0e04a",
               "name": "value",
               "type": "any"
             }
@@ -943,10 +1755,10 @@
           "value": "value"
         },
         {
-          "objID": "caf395bd-ca32-4985-9e90-9e90e6bd218b",
+          "objID": "ce69e47a-6506-4661-cff0-e1dc63489666",
           "type": "WatchVariableActionComponent",
           "left": 0,
-          "top": 1273,
+          "top": 687,
           "width": 154,
           "height": 54,
           "customInputs": [],
@@ -954,27 +1766,27 @@
           "variable": "Motors_Run[2]"
         },
         {
-          "objID": "06bce0dc-0b23-49ae-f6e2-d148704f7291",
+          "objID": "1c2114c4-0357-4ecf-da58-5142a150de2f",
           "type": "SetVariableActionComponent",
           "left": 581,
-          "top": 1275,
+          "top": 689,
           "width": 202,
           "height": 57,
           "customInputs": [],
           "customOutputs": [],
           "entries": [
             {
-              "objID": "35aa2df2-c3f3-4203-8b62-c0d98772b178",
+              "objID": "c8b8a269-da5c-40a6-970e-f7f517b007be",
               "variable": "MotorRun2",
               "value": "Motors_Run[2]"
             }
           ]
         },
         {
-          "objID": "1689395d-e894-4a57-e786-01d064f6f022",
+          "objID": "92bf6f19-a89e-49c2-960e-9c8a69d72fb8",
           "type": "EvalExprActionComponent",
           "left": 209,
-          "top": 1275,
+          "top": 689,
           "width": 219,
           "height": 54,
           "customInputs": [],
@@ -982,15 +1794,15 @@
           "expression": "Motors_Run[2] != MotorRun2"
         },
         {
-          "objID": "817f13e8-5b0f-4797-e73b-114767211714",
+          "objID": "fedc9484-aa9c-4d20-9fd0-f16477604c43",
           "type": "IsTrueActionComponent",
           "left": 456,
-          "top": 1275,
+          "top": 689,
           "width": 87,
           "height": 70,
           "customInputs": [
             {
-              "objID": "9cc8f8f0-4c35-4ee9-cf22-d24277f6947d",
+              "objID": "37d7cf07-23d2-4fa5-f499-c7f17187b57f",
               "name": "value",
               "type": "any"
             }
@@ -999,196 +1811,49 @@
           "value": "value"
         },
         {
-          "objID": "51c2b8fd-6512-48dd-fece-62ce21c283e2",
-          "type": "CallActionActionComponent",
-          "left": 944,
-          "top": 596,
-          "width": 147,
-          "height": 24,
-          "customInputs": [],
-          "customOutputs": [],
-          "action": "motor_pps_update0",
-          "userPropertyValues": {
-            "objID": "4fad18ac-2160-44f1-e678-9370e194e0a6",
-            "values": {}
-          }
-        },
-        {
-          "objID": "4687bff3-6e92-4bd9-9cfd-3b5882e2ade3",
-          "type": "CallActionActionComponent",
-          "left": 944,
-          "top": 665,
-          "width": 147,
-          "height": 24,
-          "customInputs": [],
-          "customOutputs": [],
-          "action": "motor_pps_update1",
-          "userPropertyValues": {
-            "objID": "2b5d0f4d-40c7-47f9-e8e5-a8814689899f",
-            "values": {}
-          }
-        },
-        {
-          "objID": "fc1e5c09-e025-44ea-c0ff-a72e987bef41",
-          "type": "CallActionActionComponent",
-          "left": 944,
-          "top": 736,
-          "width": 147,
-          "height": 24,
-          "customInputs": [],
-          "customOutputs": [],
-          "action": "motor_pps_update2",
-          "userPropertyValues": {
-            "objID": "c4bec10c-2c55-4688-b5fc-0c77357e7aa1",
-            "values": {}
-          }
-        },
-        {
-          "objID": "fd863875-75e4-47a3-cad7-1ad81c4b5c2e",
+          "objID": "8167230d-4a0e-4b71-c6dd-f2413d771664",
           "type": "CallActionActionComponent",
           "left": 814,
-          "top": 1108,
+          "top": 522,
           "width": 145,
           "height": 24,
           "customInputs": [],
           "customOutputs": [],
           "action": "motor_run_update0",
           "userPropertyValues": {
-            "objID": "a30c83d9-715d-41eb-d50f-40ff3a0e3d90",
+            "objID": "9ca58746-73b9-4ea9-9113-5f9061a37090",
             "values": {}
           }
         },
         {
-          "objID": "1f60d4dd-79da-4c48-e039-3f96d0bb1a7d",
+          "objID": "7d12ee9e-aa14-4f7f-cb56-47e47436071b",
           "type": "CallActionActionComponent",
           "left": 814,
-          "top": 1193,
+          "top": 607,
           "width": 145,
           "height": 24,
           "customInputs": [],
           "customOutputs": [],
           "action": "motor_run_update1",
           "userPropertyValues": {
-            "objID": "c863d27d-8dda-45b4-da1f-73dabd9cbaa6",
+            "objID": "36cd729a-2782-42e8-80f5-d620dcb7eb83",
             "values": {}
           }
         },
         {
-          "objID": "95201b8b-5876-4ef6-d9cc-5b2b2edf7c8b",
+          "objID": "22fb57df-b270-4f3e-f097-2fac2016a4de",
           "type": "CallActionActionComponent",
           "left": 814,
-          "top": 1275,
+          "top": 689,
           "width": 145,
           "height": 24,
           "customInputs": [],
           "customOutputs": [],
           "action": "motor_run_update2",
           "userPropertyValues": {
-            "objID": "b3936ddd-21f3-488d-ec38-b6f3c4b9f705",
+            "objID": "a51d7d70-4864-46e6-e86d-a13496278231",
             "values": {}
           }
-        },
-        {
-          "objID": "1cc830c1-9c22-4253-e795-d4b778534c12",
-          "type": "EvalExprActionComponent",
-          "left": 441,
-          "top": 596,
-          "width": 255,
-          "height": 54,
-          "customInputs": [],
-          "customOutputs": [],
-          "expression": "(MotorPV0*Motors_Conf[0].PPR)/60"
-        },
-        {
-          "objID": "aa314891-0d5b-43ef-9135-0a965a98e4f5",
-          "type": "SetVariableActionComponent",
-          "left": 724,
-          "top": 596,
-          "width": 192,
-          "height": 57,
-          "customInputs": [
-            {
-              "objID": "dc28ed36-de79-40e0-8436-ab72e2e20127",
-              "name": "input",
-              "type": "integer"
-            }
-          ],
-          "customOutputs": [],
-          "entries": [
-            {
-              "objID": "02b31d25-d9d6-4731-ce5b-db99b991072f",
-              "variable": "MotorPPS0",
-              "value": "input"
-            }
-          ]
-        },
-        {
-          "objID": "4a81e6cd-3524-4307-a8d8-acc8111ef450",
-          "type": "EvalExprActionComponent",
-          "left": 441,
-          "top": 665,
-          "width": 255,
-          "height": 54,
-          "customInputs": [],
-          "customOutputs": [],
-          "expression": "(MotorPV0*Motors_Conf[1].PPR)/60"
-        },
-        {
-          "objID": "89549637-4f68-4961-960b-b819adaf6fa5",
-          "type": "SetVariableActionComponent",
-          "left": 724,
-          "top": 665,
-          "width": 192,
-          "height": 57,
-          "customInputs": [
-            {
-              "objID": "9e1807b8-64be-46f6-ea57-05e3bb901325",
-              "name": "input",
-              "type": "integer"
-            }
-          ],
-          "customOutputs": [],
-          "entries": [
-            {
-              "objID": "99aba267-16c4-40d4-e18e-ae955aaeaa0d",
-              "variable": "MotorPPS1",
-              "value": "input"
-            }
-          ]
-        },
-        {
-          "objID": "58af51e7-a297-4e7b-dedf-afa63cdf21a1",
-          "type": "EvalExprActionComponent",
-          "left": 441,
-          "top": 736,
-          "width": 255,
-          "height": 54,
-          "customInputs": [],
-          "customOutputs": [],
-          "expression": "(MotorPV0*Motors_Conf[2].PPR)/60"
-        },
-        {
-          "objID": "59de00b7-2114-4682-9b23-48ccc3855555",
-          "type": "SetVariableActionComponent",
-          "left": 724,
-          "top": 736,
-          "width": 192,
-          "height": 57,
-          "customInputs": [
-            {
-              "objID": "2cfccd93-9b5f-4c1a-87ef-dd58b651116b",
-              "name": "input",
-              "type": "integer"
-            }
-          ],
-          "customOutputs": [],
-          "entries": [
-            {
-              "objID": "3cbce859-32f0-4bc1-d3ce-0203b489f6ea",
-              "variable": "MotorPPS2",
-              "value": "input"
-            }
-          ]
         }
       ],
       "connectionLines": [
@@ -1214,213 +1879,171 @@
           "input": "f34812f0-0ae6-44d0-85aa-37e86be5e54c"
         },
         {
-          "objID": "1b035286-441c-489e-fafe-1f8bc7cf856b",
-          "source": "f73fcb7f-a90d-425f-c614-07376f049ef9",
+          "objID": "c022ad71-2c90-49c4-9048-303f5ec2939a",
+          "source": "ab5f9e98-54df-4da8-bf8e-0dcf386578db",
           "output": "variable",
-          "target": "4fb555de-c56e-41fe-d371-1d1a637fc8f7",
+          "target": "f133a4c9-e978-45d9-934f-1c6f4795cbe2",
           "input": "@seqin"
         },
         {
-          "objID": "2d582399-bafe-4320-80f0-73219a3d4932",
-          "source": "b01e3f6f-75ad-4b8f-c37b-c19caa61ac00",
+          "objID": "23481f38-7739-41fb-e9ab-e896f1d3143f",
+          "source": "49217df1-3a69-4e3d-8c8d-be7ced32169c",
           "output": "variable",
-          "target": "7058230a-7295-4dce-f1eb-cf8fc62bc775",
+          "target": "0ec14c1c-962b-4266-901d-812bf3047982",
           "input": "@seqin"
         },
         {
-          "objID": "f45b712b-e47f-465d-80b5-37c8f0e00ff0",
-          "source": "8bd6a19d-0cb8-4c00-df0b-184794811684",
+          "objID": "0fb8840e-202f-417d-c3ea-7b4299d93979",
+          "source": "0b2c5999-8c94-4339-8e58-b827f747711b",
           "output": "variable",
-          "target": "e850b243-fbf9-4124-ed1b-bc5356c69a83",
+          "target": "3397bbd4-3d42-4b17-bcc8-a12a19b4daa3",
           "input": "@seqin"
         },
         {
-          "objID": "e2df00ed-08d3-4245-c6d4-3b945f70dfc6",
-          "source": "8926d87c-0164-4f45-fce7-7ede827eb5bb",
-          "output": "variable",
-          "target": "790e32ba-6ac8-4413-fb3a-5487fcffa4ea",
-          "input": "@seqin"
-        },
-        {
-          "objID": "554e5113-637b-419c-c959-c011be130c5b",
-          "source": "53a784f4-46f2-4660-f5ce-356bfe4047d8",
-          "output": "variable",
-          "target": "90339180-9861-4648-8896-c7ce7dffe1be",
-          "input": "@seqin"
-        },
-        {
-          "objID": "978afba4-2b5e-4abc-d8e7-3b94f964a8e2",
-          "source": "2bbf508d-98d4-472f-f5e7-7976050f993a",
-          "output": "variable",
-          "target": "387af724-5b9e-4a45-a03f-d612c28188a1",
-          "input": "@seqin"
-        },
-        {
-          "objID": "9c8bb169-35ec-4572-aa48-79c17c67a295",
-          "source": "75a9b325-c653-4118-b6b2-dbb8a642c0de",
-          "output": "variable",
-          "target": "ef17699f-f9ad-4512-9b5c-d7abae10379b",
-          "input": "@seqin"
-        },
-        {
-          "objID": "afd2c788-124b-4cf6-cba2-81b44f843eed",
-          "source": "a00ebfb9-3b19-40e5-fbc7-7bd233b0fe07",
-          "output": "variable",
-          "target": "b33e7a2e-faf0-4c4d-f0ba-65b70854b054",
-          "input": "@seqin"
-        },
-        {
-          "objID": "3e79f9d9-eca7-440c-ff3d-0cd2abeb3095",
-          "source": "2d19468b-5937-46c3-807a-cb049aadf21b",
-          "output": "variable",
-          "target": "dca36530-a18a-4a60-efbc-d6c92beea927",
-          "input": "@seqin"
-        },
-        {
-          "objID": "8e5987ce-d884-4316-a2b8-a827a2e76882",
-          "source": "3d57897c-f461-4e53-88dc-0d81996d06f0",
-          "output": "variable",
-          "target": "b0e961ef-239b-4468-b577-cf704fc5ff27",
-          "input": "@seqin"
-        },
-        {
-          "objID": "57add69d-6cf7-4f58-d47e-ad599dabe38b",
-          "source": "b0e961ef-239b-4468-b577-cf704fc5ff27",
-          "output": "result",
-          "target": "d1e0ae74-f851-4cb2-a4c2-56e84c3bae50",
-          "input": "value"
-        },
-        {
-          "objID": "2d80f034-5a0a-4ace-b1b5-d1881c50b09d",
-          "source": "d1e0ae74-f851-4cb2-a4c2-56e84c3bae50",
-          "output": "True",
-          "target": "c473769f-359c-46bd-b85e-ba4ef04dc0f5",
-          "input": "@seqin"
-        },
-        {
-          "objID": "56ff0312-bb6c-4bd9-b83e-1b3190da9b60",
-          "source": "fdadbaf0-3038-4b8b-c2d0-67c6fb92a022",
-          "output": "variable",
-          "target": "72532e1f-fe58-421e-8039-6f83559f1220",
-          "input": "@seqin"
-        },
-        {
-          "objID": "143744ba-88b2-482e-d799-85cf343dd1d4",
-          "source": "72532e1f-fe58-421e-8039-6f83559f1220",
-          "output": "result",
-          "target": "7939c44d-9cb9-4999-979c-8fbb31776b36",
-          "input": "value"
-        },
-        {
-          "objID": "70c63775-6045-413d-8839-a725de5007eb",
-          "source": "7939c44d-9cb9-4999-979c-8fbb31776b36",
-          "output": "True",
-          "target": "1f18ed6e-92fa-4c49-bf2c-d8b7df543354",
-          "input": "@seqin"
-        },
-        {
-          "objID": "bb8bf57b-d9f3-467b-be18-4d5549cc18b7",
-          "source": "caf395bd-ca32-4985-9e90-9e90e6bd218b",
-          "output": "variable",
-          "target": "1689395d-e894-4a57-e786-01d064f6f022",
-          "input": "@seqin"
-        },
-        {
-          "objID": "fd798b25-d474-4551-c02f-707004b0a61c",
-          "source": "1689395d-e894-4a57-e786-01d064f6f022",
-          "output": "result",
-          "target": "817f13e8-5b0f-4797-e73b-114767211714",
-          "input": "value"
-        },
-        {
-          "objID": "9efc7ef7-1596-40b3-eb4f-b79ce8069d54",
-          "source": "817f13e8-5b0f-4797-e73b-114767211714",
-          "output": "True",
-          "target": "06bce0dc-0b23-49ae-f6e2-d148704f7291",
-          "input": "@seqin"
-        },
-        {
-          "objID": "90b05fb2-498e-48fc-b629-472a0d178920",
-          "source": "c473769f-359c-46bd-b85e-ba4ef04dc0f5",
+          "objID": "a9f4117f-cf85-4dac-f707-6fe7fc7bf333",
+          "source": "f133a4c9-e978-45d9-934f-1c6f4795cbe2",
           "output": "@seqout",
-          "target": "fd863875-75e4-47a3-cad7-1ad81c4b5c2e",
+          "target": "25190b5a-3e2d-4b81-f437-daf3d0e65997",
           "input": "@seqin"
         },
         {
-          "objID": "9fa72172-36b2-4d26-c2bf-95fc2852ee23",
-          "source": "1f18ed6e-92fa-4c49-bf2c-d8b7df543354",
-          "output": "@seqout",
-          "target": "1f60d4dd-79da-4c48-e039-3f96d0bb1a7d",
-          "input": "@seqin"
-        },
-        {
-          "objID": "8069b8b6-3b71-4bf0-8ba5-54c6aa373045",
-          "source": "06bce0dc-0b23-49ae-f6e2-d148704f7291",
-          "output": "@seqout",
-          "target": "95201b8b-5876-4ef6-d9cc-5b2b2edf7c8b",
-          "input": "@seqin"
-        },
-        {
-          "objID": "29018d90-c06a-42fc-ec13-017c700c114f",
-          "source": "790e32ba-6ac8-4413-fb3a-5487fcffa4ea",
-          "output": "@seqout",
-          "target": "1cc830c1-9c22-4253-e795-d4b778534c12",
-          "input": "@seqin"
-        },
-        {
-          "objID": "55e8b4e2-62f4-45e4-9f64-5e7d8f8302e3",
-          "source": "1cc830c1-9c22-4253-e795-d4b778534c12",
+          "objID": "2a90de6e-1f96-4d06-9039-85ed5383b516",
+          "source": "25190b5a-3e2d-4b81-f437-daf3d0e65997",
           "output": "result",
-          "target": "aa314891-0d5b-43ef-9135-0a965a98e4f5",
+          "target": "ff54216f-e090-4df2-fa51-dfec239886ed",
           "input": "input"
         },
         {
-          "objID": "abc2d355-63a6-4032-c88c-e6c29453bd2d",
-          "source": "aa314891-0d5b-43ef-9135-0a965a98e4f5",
+          "objID": "1da8ccbb-83ee-455d-b5f0-a9fa0cee92fd",
+          "source": "ff54216f-e090-4df2-fa51-dfec239886ed",
           "output": "@seqout",
-          "target": "51c2b8fd-6512-48dd-fece-62ce21c283e2",
+          "target": "afed0f54-f424-46d4-9289-919e701f3a4b",
           "input": "@seqin"
         },
         {
-          "objID": "e17070c7-015d-4357-c0c1-f42f1bbb3280",
-          "source": "4a81e6cd-3524-4307-a8d8-acc8111ef450",
+          "objID": "ac8de545-b177-4134-eb55-7b456586ed2b",
+          "source": "9287818c-19e4-4947-b604-2d892be61668",
           "output": "result",
-          "target": "89549637-4f68-4961-960b-b819adaf6fa5",
+          "target": "e39199d6-dfa5-4b4b-873b-ae293164995c",
           "input": "input"
         },
         {
-          "objID": "008d6339-a89c-463e-fec9-2dfce7a50bdd",
-          "source": "58af51e7-a297-4e7b-dedf-afa63cdf21a1",
+          "objID": "4de30671-0bd1-4cf5-da77-e648684d37bd",
+          "source": "4a531098-f7db-4448-ee26-72e967d9badf",
           "output": "result",
-          "target": "59de00b7-2114-4682-9b23-48ccc3855555",
+          "target": "b0ce77b6-9a9f-4c8b-948c-e89df8ffead4",
           "input": "input"
         },
         {
-          "objID": "61f8ac4f-29a0-4864-f97d-b6aa39ba46bb",
-          "source": "90339180-9861-4648-8896-c7ce7dffe1be",
+          "objID": "5ece4f26-32ff-4377-e8ca-a507ee893836",
+          "source": "0ec14c1c-962b-4266-901d-812bf3047982",
           "output": "@seqout",
-          "target": "4a81e6cd-3524-4307-a8d8-acc8111ef450",
+          "target": "9287818c-19e4-4947-b604-2d892be61668",
           "input": "@seqin"
         },
         {
-          "objID": "5db9c73e-6fa5-4573-9db9-fd9b958a8a15",
-          "source": "387af724-5b9e-4a45-a03f-d612c28188a1",
+          "objID": "c215b3c9-abb5-473d-ea45-2f58ba9bfe5e",
+          "source": "3397bbd4-3d42-4b17-bcc8-a12a19b4daa3",
           "output": "@seqout",
-          "target": "58af51e7-a297-4e7b-dedf-afa63cdf21a1",
+          "target": "4a531098-f7db-4448-ee26-72e967d9badf",
           "input": "@seqin"
         },
         {
-          "objID": "4969401b-ff85-41ba-89bd-aa4b04a3996a",
-          "source": "89549637-4f68-4961-960b-b819adaf6fa5",
+          "objID": "d47e8f95-e414-4f18-df48-29774f2575c4",
+          "source": "e39199d6-dfa5-4b4b-873b-ae293164995c",
           "output": "@seqout",
-          "target": "4687bff3-6e92-4bd9-9cfd-3b5882e2ade3",
+          "target": "fa44f1dc-f652-41eb-c227-1670d9049b26",
           "input": "@seqin"
         },
         {
-          "objID": "1df306cb-6c77-4ba4-c16d-e33991c40397",
-          "source": "59de00b7-2114-4682-9b23-48ccc3855555",
+          "objID": "a84e245f-0d93-420c-f1d3-d1a3ecfeaf7c",
+          "source": "b0ce77b6-9a9f-4c8b-948c-e89df8ffead4",
           "output": "@seqout",
-          "target": "fc1e5c09-e025-44ea-c0ff-a72e987bef41",
+          "target": "3a2bef69-1645-44b8-fdf0-dc75d17a1617",
+          "input": "@seqin"
+        },
+        {
+          "objID": "d1a76ef4-a535-4722-cf19-40f4f99d4f03",
+          "source": "90c5a5b1-c6bf-4766-8817-23a6debcecc3",
+          "output": "variable",
+          "target": "9449e79a-1614-401a-890f-e88b86bbb39d",
+          "input": "@seqin"
+        },
+        {
+          "objID": "2a45b2ab-e81e-412d-94a6-331217ab43c8",
+          "source": "9449e79a-1614-401a-890f-e88b86bbb39d",
+          "output": "result",
+          "target": "aef39f39-b04b-45e5-fb2e-0a0861986efc",
+          "input": "value"
+        },
+        {
+          "objID": "203944c3-c6de-4409-91c4-ad3ff3fc07cd",
+          "source": "aef39f39-b04b-45e5-fb2e-0a0861986efc",
+          "output": "True",
+          "target": "d12c03f7-2f74-42be-b8b2-3d6905e38ec0",
+          "input": "@seqin"
+        },
+        {
+          "objID": "ecd6a91a-f1ca-4476-aa07-309c9ec3da5c",
+          "source": "21544aa8-5122-4844-befa-1aad9a084fb4",
+          "output": "variable",
+          "target": "24eb3293-f273-4597-fc77-b43bc0369f97",
+          "input": "@seqin"
+        },
+        {
+          "objID": "98e9d2c2-d4b4-403a-e11e-4337c3a9ca69",
+          "source": "24eb3293-f273-4597-fc77-b43bc0369f97",
+          "output": "result",
+          "target": "aed06295-53ce-46c9-8432-f27b433ac198",
+          "input": "value"
+        },
+        {
+          "objID": "e3db6979-d799-439c-e899-501d362c7701",
+          "source": "aed06295-53ce-46c9-8432-f27b433ac198",
+          "output": "True",
+          "target": "279c0f4b-3baa-4d4a-b06d-f42ccd4b62a6",
+          "input": "@seqin"
+        },
+        {
+          "objID": "9d289274-29e7-4d23-e06a-96bba6b70181",
+          "source": "ce69e47a-6506-4661-cff0-e1dc63489666",
+          "output": "variable",
+          "target": "92bf6f19-a89e-49c2-960e-9c8a69d72fb8",
+          "input": "@seqin"
+        },
+        {
+          "objID": "2db020a2-9405-4f20-99d0-f9625225471f",
+          "source": "92bf6f19-a89e-49c2-960e-9c8a69d72fb8",
+          "output": "result",
+          "target": "fedc9484-aa9c-4d20-9fd0-f16477604c43",
+          "input": "value"
+        },
+        {
+          "objID": "a639f9ac-44a0-4df1-9bba-999e6c8a4d58",
+          "source": "fedc9484-aa9c-4d20-9fd0-f16477604c43",
+          "output": "True",
+          "target": "1c2114c4-0357-4ecf-da58-5142a150de2f",
+          "input": "@seqin"
+        },
+        {
+          "objID": "5fea4cae-f780-42dd-d572-c0f6cb61434f",
+          "source": "d12c03f7-2f74-42be-b8b2-3d6905e38ec0",
+          "output": "@seqout",
+          "target": "8167230d-4a0e-4b71-c6dd-f2413d771664",
+          "input": "@seqin"
+        },
+        {
+          "objID": "02ff6ad1-366b-474b-eed6-7a6437885566",
+          "source": "279c0f4b-3baa-4d4a-b06d-f42ccd4b62a6",
+          "output": "@seqout",
+          "target": "7d12ee9e-aa14-4f7f-cb56-47e47436071b",
+          "input": "@seqin"
+        },
+        {
+          "objID": "ed7bd31e-b54f-4e30-fd28-e50bc91da578",
+          "source": "1c2114c4-0357-4ecf-da58-5142a150de2f",
+          "output": "@seqout",
+          "target": "22fb57df-b270-4f3e-f097-2fac2016a4de",
           "input": "@seqin"
         }
       ],
