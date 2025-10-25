@@ -1,6 +1,7 @@
 #include <M5Unified.h>
 #include "my_common_code.h"
 
+
 static uint32_t my_tick_callback(void);
 
 uint32_t draw_buf[DRAW_BUF_SIZE / 4];

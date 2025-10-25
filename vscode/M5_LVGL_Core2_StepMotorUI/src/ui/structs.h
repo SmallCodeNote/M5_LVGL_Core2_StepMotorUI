@@ -23,11 +23,10 @@ enum FlowArrayOfStructures {
 
 enum StepMotorConfigFlowStructureFields {
     FLOW_STRUCTURE_STEP_MOTOR_CONFIG_FIELD_PPR = 0,
-    FLOW_STRUCTURE_STEP_MOTOR_CONFIG_FIELD_MICRO_STEP = 1,
-    FLOW_STRUCTURE_STEP_MOTOR_CONFIG_FIELD_GEAR_RATIO = 2,
-    FLOW_STRUCTURE_STEP_MOTOR_CONFIG_FIELD_ACCELERATION = 3,
-    FLOW_STRUCTURE_STEP_MOTOR_CONFIG_FIELD_SV = 4,
-    FLOW_STRUCTURE_STEP_MOTOR_CONFIG_FIELD_TITLE = 5,
+    FLOW_STRUCTURE_STEP_MOTOR_CONFIG_FIELD_ACCELERATION = 1,
+    FLOW_STRUCTURE_STEP_MOTOR_CONFIG_FIELD_SV = 2,
+    FLOW_STRUCTURE_STEP_MOTOR_CONFIG_FIELD_TITLE = 3,
+    FLOW_STRUCTURE_STEP_MOTOR_CONFIG_FIELD_DIRECTION_REV = 4,
     FLOW_STRUCTURE_STEP_MOTOR_CONFIG_NUM_FIELDS
 };
 
@@ -51,20 +50,6 @@ struct StepMotorConfigValue {
         value.getArray()->values[FLOW_STRUCTURE_STEP_MOTOR_CONFIG_FIELD_PPR] = IntegerValue(PPR);
     }
     
-    int MicroStep() {
-        return value.getArray()->values[FLOW_STRUCTURE_STEP_MOTOR_CONFIG_FIELD_MICRO_STEP].getInt();
-    }
-    void MicroStep(int MicroStep) {
-        value.getArray()->values[FLOW_STRUCTURE_STEP_MOTOR_CONFIG_FIELD_MICRO_STEP] = IntegerValue(MicroStep);
-    }
-    
-    int GearRatio() {
-        return value.getArray()->values[FLOW_STRUCTURE_STEP_MOTOR_CONFIG_FIELD_GEAR_RATIO].getInt();
-    }
-    void GearRatio(int GearRatio) {
-        value.getArray()->values[FLOW_STRUCTURE_STEP_MOTOR_CONFIG_FIELD_GEAR_RATIO] = IntegerValue(GearRatio);
-    }
-    
     int Acceleration() {
         return value.getArray()->values[FLOW_STRUCTURE_STEP_MOTOR_CONFIG_FIELD_ACCELERATION].getInt();
     }
@@ -84,6 +69,13 @@ struct StepMotorConfigValue {
     }
     void Title(const char *Title) {
         value.getArray()->values[FLOW_STRUCTURE_STEP_MOTOR_CONFIG_FIELD_TITLE] = StringValue(Title);
+    }
+    
+    bool DirectionRev() {
+        return value.getArray()->values[FLOW_STRUCTURE_STEP_MOTOR_CONFIG_FIELD_DIRECTION_REV].getBoolean();
+    }
+    void DirectionRev(bool DirectionRev) {
+        value.getArray()->values[FLOW_STRUCTURE_STEP_MOTOR_CONFIG_FIELD_DIRECTION_REV] = BooleanValue(DirectionRev);
     }
 };
 

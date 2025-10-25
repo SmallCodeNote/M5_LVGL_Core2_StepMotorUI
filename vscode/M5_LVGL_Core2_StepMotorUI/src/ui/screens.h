@@ -20,7 +20,6 @@ typedef struct _objects_t {
     lv_obj_t *userwidget_motorinfo_x__userwidget_motorinfo_label_pv;
     lv_obj_t *userwidget_motorinfo_x__userwidget_motorinfo_label_title;
     lv_obj_t *userwidget_motorinfo_x__userwidget_motorinfo_label_motorindex;
-    lv_obj_t *userwidget_motorinfo_x__userwidget_motorinfo_label_motorindex_1;
     lv_obj_t *userwidget_motorinfo_x__obj1;
     lv_obj_t *userwidget_motorinfo_y;
     lv_obj_t *userwidget_motorinfo_y__userwidget_motorinfo_button_switch_run;
@@ -30,7 +29,6 @@ typedef struct _objects_t {
     lv_obj_t *userwidget_motorinfo_y__userwidget_motorinfo_label_pv;
     lv_obj_t *userwidget_motorinfo_y__userwidget_motorinfo_label_title;
     lv_obj_t *userwidget_motorinfo_y__userwidget_motorinfo_label_motorindex;
-    lv_obj_t *userwidget_motorinfo_y__userwidget_motorinfo_label_motorindex_1;
     lv_obj_t *userwidget_motorinfo_y__obj1;
     lv_obj_t *userwidget_motorinfo_z;
     lv_obj_t *userwidget_motorinfo_z__userwidget_motorinfo_button_switch_run;
@@ -40,23 +38,24 @@ typedef struct _objects_t {
     lv_obj_t *userwidget_motorinfo_z__userwidget_motorinfo_label_pv;
     lv_obj_t *userwidget_motorinfo_z__userwidget_motorinfo_label_title;
     lv_obj_t *userwidget_motorinfo_z__userwidget_motorinfo_label_motorindex;
-    lv_obj_t *userwidget_motorinfo_z__userwidget_motorinfo_label_motorindex_1;
     lv_obj_t *userwidget_motorinfo_z__obj1;
     lv_obj_t *textarea_config_motor_ppr;
-    lv_obj_t *textarea_config_motor_gearratio;
     lv_obj_t *textarea_config_motor_acceleration;
     lv_obj_t *obj0;
-    lv_obj_t *textarea_config_motor_microstep;
-    lv_obj_t *keyboard_input_keyboard_integer;
     lv_obj_t *obj1;
-    lv_obj_t *label_config_motor_title;
+    lv_obj_t *keyboard_input_keyboard_integer;
     lv_obj_t *obj2;
+    lv_obj_t *userwidget_motorinfo_button_switch_run_1;
+    lv_obj_t *label_config_motor_title;
+    lv_obj_t *obj3;
+    lv_obj_t *obj4;
     lv_obj_t *textarea_input_keyboard_integer;
     lv_obj_t *label_input_keyboard_integer;
     lv_obj_t *arc_config_motor_sv;
-    lv_obj_t *obj3;
-    lv_obj_t *obj4;
+    lv_obj_t *userwidget_motorinfo_button_switch_run_label_1;
     lv_obj_t *obj5;
+    lv_obj_t *obj6;
+    lv_obj_t *obj7;
 } objects_t;
 
 extern objects_t objects;
