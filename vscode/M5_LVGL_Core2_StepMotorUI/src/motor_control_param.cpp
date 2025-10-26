@@ -90,13 +90,13 @@ void updateUI(const MotorsParam &params)
     set_var_motor_ppr_1(params.ppr_1);
     set_var_motor_ppr_2(params.ppr_2);
 
-    set_var_motor_direction_rev_0(params.rev_0);
-    set_var_motor_direction_rev_1(params.rev_1);
-    set_var_motor_direction_rev_2(params.rev_2);
-
     set_var_motor_sv_0(params.sv_0);
     set_var_motor_sv_1(params.sv_1);
     set_var_motor_sv_2(params.sv_2);
+
+    set_var_motor_direction_rev_0(params.rev_0);
+    set_var_motor_direction_rev_1(params.rev_1);
+    set_var_motor_direction_rev_2(params.rev_2);
 
     // Serial出力
     Serial.println("[UI] Updated motor parameters:");
@@ -107,6 +107,10 @@ void updateUI(const MotorsParam &params)
     Serial.printf("  motor_ppr_0 = %d\n", params.ppr_0);
     Serial.printf("  motor_ppr_1 = %d\n", params.ppr_1);
     Serial.printf("  motor_ppr_2 = %d\n", params.ppr_2);
+
+    Serial.printf("  motor_sv_0 = %d\n", params.sv_0);
+    Serial.printf("  motor_sv_1 = %d\n", params.sv_1);
+    Serial.printf("  motor_sv_2 = %d\n", params.sv_2);
 
     Serial.printf("  motor_direction_rev_0 = %s\n", params.rev_0 ? "true" : "false");
     Serial.printf("  motor_direction_rev_1 = %s\n", params.rev_1 ? "true" : "false");
@@ -174,6 +178,7 @@ void motorRun(int index)
 {
     driverPowerON();
 
+    int acc = 200;
     int pps = 0;
     bool rev = false;
     FastAccelStepper *motor = nullptr;
@@ -183,16 +188,19 @@ void motorRun(int index)
     case 0:
         pps = (motorParam.sv_0 * motorParam.ppr_0) / 60;
         rev = motorParam.rev_0;
+        acc = motorParam.acc_rpm_0 * motorParam.ppr_0 / 60;
         motor = motorX;
         break;
     case 1:
         pps = (motorParam.sv_1 * motorParam.ppr_1) / 60;
         rev = motorParam.rev_1;
+        acc = motorParam.acc_rpm_1 * motorParam.ppr_1 / 60;
         motor = motorY;
         break;
     case 2:
         pps = (motorParam.sv_2 * motorParam.ppr_2) / 60;
         rev = motorParam.rev_2;
+        acc = motorParam.acc_rpm_2 * motorParam.ppr_2 / 60;
         motor = motorZ;
         break;
 
@@ -201,7 +209,9 @@ void motorRun(int index)
     }
 
     motor->setSpeedInHz(pps);
+    motor->setAcceleration(acc);
 
+    
     if (rev)
     {
         motor->runBackward();

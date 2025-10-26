@@ -1,4 +1,4 @@
-#ifndef EEZ_LVGL_UI_SCREENS_H
+﻿#ifndef EEZ_LVGL_UI_SCREENS_H
 #define EEZ_LVGL_UI_SCREENS_H
 
 #include <lvgl.h>

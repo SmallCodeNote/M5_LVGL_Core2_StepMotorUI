@@ -5,6 +5,7 @@
 #include "motor_control_param.h"
 #include "my_debug.h"
 
+
 extern "C" void action_motor_sv_update_0(lv_event_t *e)
 {
     motorParam.sv_0 = get_var_motor_sv_0();

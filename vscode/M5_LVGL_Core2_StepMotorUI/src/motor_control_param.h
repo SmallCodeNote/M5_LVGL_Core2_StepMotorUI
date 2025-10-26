@@ -14,9 +14,6 @@
 #define Z_DIR_PIN G0
 #define Z_STEP_PIN G2
 
-//#define FULL_STEP_PER_REV 200
-//#define MICRO_STEPS 32
-
 extern FastAccelStepperEngine motorController;
 extern FastAccelStepper *motorX;
 extern FastAccelStepper *motorY;
@@ -61,7 +58,5 @@ void driverPowerOFF();
 void motorRun(int motorIndex);
 void motorStop(int index);
 bool updateMotorParam(int index, int ppr, int acc_rpm, bool rev);
-
-
 
 #endif

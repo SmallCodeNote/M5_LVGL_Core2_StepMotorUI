@@ -1,4 +1,4 @@
-#ifndef EEZ_LVGL_UI_STYLES_H
+﻿#ifndef EEZ_LVGL_UI_STYLES_H
 #define EEZ_LVGL_UI_STYLES_H
 
 #include <lvgl.h>

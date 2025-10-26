@@ -1,4 +1,4 @@
-#ifndef EEZ_LVGL_UI_GUI_H
+﻿#ifndef EEZ_LVGL_UI_GUI_H
 #define EEZ_LVGL_UI_GUI_H
 
 #include <lvgl.h>
@@ -15,7 +15,7 @@
 extern "C" {
 #endif
 
-extern const uint8_t assets[12656];
+extern const uint8_t assets[28880];
 
 void ui_init();
 void ui_tick();

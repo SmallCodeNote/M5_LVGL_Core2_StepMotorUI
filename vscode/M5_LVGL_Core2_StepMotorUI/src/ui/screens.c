@@ -1,4 +1,4 @@
-#include <string.h>
+﻿#include <string.h>
 
 #include "screens.h"
 #include "images.h"
@@ -204,8 +204,8 @@ void create_screen_screen_top() {
             // userwidget_motorinfo_x
             lv_obj_t *obj = lv_obj_create(parent_obj);
             objects.userwidget_motorinfo_x = obj;
-            lv_obj_set_pos(obj, 0, 0);
-            lv_obj_set_size(obj, 320, 80);
+            lv_obj_set_pos(obj, 60, 0);
+            lv_obj_set_size(obj, 260, 80);
             lv_obj_set_style_pad_left(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_set_style_pad_top(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_set_style_pad_right(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -218,8 +218,8 @@ void create_screen_screen_top() {
             // userwidget_motorinfo_y
             lv_obj_t *obj = lv_obj_create(parent_obj);
             objects.userwidget_motorinfo_y = obj;
-            lv_obj_set_pos(obj, 0, 80);
-            lv_obj_set_size(obj, 320, 80);
+            lv_obj_set_pos(obj, 60, 80);
+            lv_obj_set_size(obj, 260, 80);
             lv_obj_set_style_pad_left(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_set_style_pad_top(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_set_style_pad_right(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -232,8 +232,8 @@ void create_screen_screen_top() {
             // userwidget_motorinfo_z
             lv_obj_t *obj = lv_obj_create(parent_obj);
             objects.userwidget_motorinfo_z = obj;
-            lv_obj_set_pos(obj, 0, 160);
-            lv_obj_set_size(obj, 320, 80);
+            lv_obj_set_pos(obj, 60, 160);
+            lv_obj_set_size(obj, 260, 80);
             lv_obj_set_style_pad_left(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_set_style_pad_top(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_set_style_pad_right(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -669,7 +669,7 @@ void create_user_widget_userwidget_motorinfo(lv_obj_t *parent_obj, void *flowSta
             // userwidget_motorinfo_button_switch_run
             lv_obj_t *obj = lv_button_create(parent_obj);
             ((lv_obj_t **)&objects)[startWidgetIndex + 0] = obj;
-            lv_obj_set_pos(obj, 258, 10);
+            lv_obj_set_pos(obj, 194, 10);
             lv_obj_set_size(obj, 60, 60);
             lv_obj_add_event_cb(obj, event_handler_cb_userwidget_motorinfo_userwidget_motorinfo_button_switch_run, LV_EVENT_ALL, flowState);
             add_style_style_button_switch(obj);
@@ -692,8 +692,8 @@ void create_user_widget_userwidget_motorinfo(lv_obj_t *parent_obj, void *flowSta
             // userwidget_motorinfo_label_pv
             lv_obj_t *obj = lv_label_create(parent_obj);
             ((lv_obj_t **)&objects)[startWidgetIndex + 4] = obj;
-            lv_obj_set_pos(obj, 119, 0);
-            lv_obj_set_size(obj, 128, 52);
+            lv_obj_set_pos(obj, 76, 0);
+            lv_obj_set_size(obj, 110, 52);
             lv_label_set_long_mode(obj, LV_LABEL_LONG_DOT);
             lv_obj_set_style_text_font(obj, &lv_font_montserrat_48, LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_set_style_text_align(obj, LV_TEXT_ALIGN_RIGHT, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -724,7 +724,7 @@ void create_user_widget_userwidget_motorinfo(lv_obj_t *parent_obj, void *flowSta
             // userwidget_motorinfo_label_sv
             lv_obj_t *obj = lv_label_create(parent_obj);
             ((lv_obj_t **)&objects)[startWidgetIndex + 2] = obj;
-            lv_obj_set_pos(obj, 173, 44);
+            lv_obj_set_pos(obj, 112, 45);
             lv_obj_set_size(obj, 74, 29);
             lv_label_set_long_mode(obj, LV_LABEL_LONG_DOT);
             lv_obj_add_event_cb(obj, event_handler_cb_userwidget_motorinfo_userwidget_motorinfo_label_sv, LV_EVENT_ALL, flowState);
@@ -735,7 +735,7 @@ void create_user_widget_userwidget_motorinfo(lv_obj_t *parent_obj, void *flowSta
         }
         {
             lv_obj_t *obj = lv_label_create(parent_obj);
-            lv_obj_set_pos(obj, 144, 51);
+            lv_obj_set_pos(obj, 90, 51);
             lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
             lv_label_set_text(obj, "SV");
         }
@@ -744,7 +744,7 @@ void create_user_widget_userwidget_motorinfo(lv_obj_t *parent_obj, void *flowSta
             lv_obj_t *obj = lv_label_create(parent_obj);
             ((lv_obj_t **)&objects)[startWidgetIndex + 5] = obj;
             lv_obj_set_pos(obj, 40, 10);
-            lv_obj_set_size(obj, 70, 30);
+            lv_obj_set_size(obj, 35, 30);
             lv_label_set_long_mode(obj, LV_LABEL_LONG_DOT);
             lv_label_set_text(obj, "");
         }
