@@ -63,8 +63,6 @@ extern "C" void set_var_motor_direction_rev_0(bool value) { motor_direction_rev_
 extern "C" void set_var_motor_direction_rev_1(bool value) { motor_direction_rev_1 = value; }
 extern "C" void set_var_motor_direction_rev_2(bool value) { motor_direction_rev_2 = value; }
 
-
-
 int32_t motor_ppr_0;
 int32_t motor_ppr_1;
 int32_t motor_ppr_2;
@@ -76,3 +74,29 @@ extern "C" int32_t get_var_motor_ppr_2() { return motor_ppr_2; }
 extern "C" void set_var_motor_ppr_0(int32_t value) { motor_ppr_0 = value; }
 extern "C" void set_var_motor_ppr_1(int32_t value) { motor_ppr_1 = value; }
 extern "C" void set_var_motor_ppr_2(int32_t value) { motor_ppr_2 = value; }
+
+
+int32_t sensor_value;
+int32_t sensor_top_left_x;
+int32_t sensor_top_left_y;
+int32_t sensor_bottom_right_x;
+int32_t sensor_bottom_right_y;
+int32_t seensor_interval;
+
+extern "C" int32_t get_var_sensor_value() { return sensor_value; }
+extern "C" void set_var_sensor_value(int32_t value) { sensor_value = value; }
+
+extern "C" int32_t get_var_sensor_top_left_x() { return sensor_top_left_x; }
+extern "C" void set_var_sensor_top_left_x(int32_t value) { sensor_top_left_x = value; }
+
+extern "C" int32_t get_var_sensor_top_left_y() { return sensor_top_left_y; }
+extern "C" void set_var_sensor_top_left_y(int32_t value) { sensor_top_left_y = value; }
+
+extern "C" int32_t get_var_sensor_bottom_right_x() { return sensor_bottom_right_x; }
+extern "C" void set_var_sensor_bottom_right_x(int32_t value) { sensor_bottom_right_x = value; }
+
+extern "C" int32_t get_var_sensor_bottom_right_y() { return sensor_bottom_right_y; }
+extern "C" void set_var_sensor_bottom_right_y(int32_t value) { sensor_bottom_right_y = value; }
+
+extern "C" int32_t get_var_seensor_interval() { return seensor_interval; }
+extern "C" void set_var_seensor_interval(int32_t value) { seensor_interval = value; }

@@ -12,6 +12,9 @@ typedef struct _objects_t {
     lv_obj_t *screen_config_motor;
     lv_obj_t *screen_input_keyboard_integer;
     lv_obj_t *screen_input_sv;
+    lv_obj_t *screen_sensor_view;
+    lv_obj_t *screen_sensor_config;
+    lv_obj_t *screen_sensor_config_input_keyboard_integer;
     lv_obj_t *userwidget_motorinfo_x;
     lv_obj_t *userwidget_motorinfo_x__userwidget_motorinfo_button_switch_run;
     lv_obj_t *userwidget_motorinfo_x__obj0;
@@ -39,23 +42,40 @@ typedef struct _objects_t {
     lv_obj_t *userwidget_motorinfo_z__userwidget_motorinfo_label_title;
     lv_obj_t *userwidget_motorinfo_z__userwidget_motorinfo_label_motorindex;
     lv_obj_t *userwidget_motorinfo_z__obj1;
+    lv_obj_t *obj0;
     lv_obj_t *textarea_config_motor_ppr;
     lv_obj_t *textarea_config_motor_acceleration;
-    lv_obj_t *obj0;
     lv_obj_t *obj1;
-    lv_obj_t *keyboard_input_keyboard_integer;
     lv_obj_t *obj2;
-    lv_obj_t *userwidget_motorinfo_button_switch_run_1;
-    lv_obj_t *label_config_motor_title;
+    lv_obj_t *keyboard_input_keyboard_integer;
     lv_obj_t *obj3;
+    lv_obj_t *userwidget_motorinfo_button_switch_run_1;
     lv_obj_t *obj4;
+    lv_obj_t *obj5;
+    lv_obj_t *textarea_config_sensor_top_left_x;
+    lv_obj_t *textarea_config_sensor_top_left_y;
+    lv_obj_t *textarea_config_sensor_bottom_right_x;
+    lv_obj_t *textarea_config_sensor_bottom_right_y;
+    lv_obj_t *obj6;
+    lv_obj_t *textarea_config_sensor_bottom_right_y_1;
+    lv_obj_t *keyboard_input_keyboard_integer_1;
+    lv_obj_t *obj7;
+    lv_obj_t *label_config_motor_title;
+    lv_obj_t *obj8;
+    lv_obj_t *obj9;
     lv_obj_t *textarea_input_keyboard_integer;
     lv_obj_t *label_input_keyboard_integer;
     lv_obj_t *arc_config_motor_sv;
     lv_obj_t *userwidget_motorinfo_button_switch_run_label_1;
-    lv_obj_t *obj5;
-    lv_obj_t *obj6;
-    lv_obj_t *obj7;
+    lv_obj_t *obj10;
+    lv_obj_t *obj11;
+    lv_obj_t *obj12;
+    lv_obj_t *chart_sensor_view;
+    lv_obj_t *obj13;
+    lv_obj_t *obj14;
+    lv_obj_t *obj15;
+    lv_obj_t *textarea_input_keyboard_integer_1;
+    lv_obj_t *label_input_keyboard_integer_1;
 } objects_t;
 
 extern objects_t objects;
@@ -65,6 +85,9 @@ enum ScreensEnum {
     SCREEN_ID_SCREEN_CONFIG_MOTOR = 2,
     SCREEN_ID_SCREEN_INPUT_KEYBOARD_INTEGER = 3,
     SCREEN_ID_SCREEN_INPUT_SV = 4,
+    SCREEN_ID_SCREEN_SENSOR_VIEW = 5,
+    SCREEN_ID_SCREEN_SENSOR_CONFIG = 6,
+    SCREEN_ID_SCREEN_SENSOR_CONFIG_INPUT_KEYBOARD_INTEGER = 7,
 };
 
 void create_screen_screen_top();
@@ -78,6 +101,15 @@ void tick_screen_screen_input_keyboard_integer();
 
 void create_screen_screen_input_sv();
 void tick_screen_screen_input_sv();
+
+void create_screen_screen_sensor_view();
+void tick_screen_screen_sensor_view();
+
+void create_screen_screen_sensor_config();
+void tick_screen_screen_sensor_config();
+
+void create_screen_screen_sensor_config_input_keyboard_integer();
+void tick_screen_screen_sensor_config_input_keyboard_integer();
 
 void create_user_widget_userwidget_motorinfo(lv_obj_t *parent_obj, void *flowState, int startWidgetIndex);
 void tick_user_widget_userwidget_motorinfo(void *flowState, int startWidgetIndex);

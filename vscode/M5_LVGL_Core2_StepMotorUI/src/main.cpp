@@ -6,9 +6,11 @@
 #include "ui/ui.h"
 #include "ui/eez-flow.h"
 #include "my_common_code.h"
-#include "motor_control_param.h"
+#include "motor_control.h"
 
 #include "my_debug.h"
+#include "sensor_control.h"
+#include "ui/screens.h"
 
 void setup()
 {
@@ -44,12 +46,32 @@ void setup()
   motorDriver.enableMotor(0);
   motorEnabled = false;
 
+  setupSensor();
+
+  lv_chart_set_range(objects.chart_sensor_view, LV_CHART_AXIS_PRIMARY_Y, 0, 150);
+  lv_chart_set_range(objects.chart_sensor_view, LV_CHART_AXIS_SECONDARY_Y, 0, 300);
+  chart_sensor_view_ser1 = lv_chart_add_series(objects.chart_sensor_view, lv_palette_main(LV_PALETTE_RED), LV_CHART_AXIS_PRIMARY_Y);
+  for (size_t i = 0; i < 10; i++)
+  {
+    chart_sensor_view_ser1->y_points[i] = 0;
+  }
+
   updateUI(motorParam);
   saveEEPROM(motorParam);
 }
 
 int waitCountUnit = 10;
 int waitCountSum = 0;
+
+int sensorCounter = 0;
+
+void update_chart_sensor_view_ser1()
+{
+  for (size_t i = 0; i < 9; i++)
+  {
+    chart_sensor_view_ser1->y_points[i] = chart_sensor_view_ser1->y_points[i + 1];
+  }
+}
 
 void loop()
 {
@@ -59,6 +81,25 @@ void loop()
   ui_tick();
   vTaskDelay(waitCountUnit);
   waitCountSum += waitCountUnit;
+
+  //handleModbusRequest();
+
+  if (tofSensorInterval > 0)
+  {
+    sensorCounter += waitCountUnit;
+    if (sensorCounter >= tofSensorInterval)
+    {
+      int sensorValue = (int)tofSensor.read();
+      set_var_sensor_value(sensorValue);
+
+      update_chart_sensor_view_ser1();
+
+      chart_sensor_view_ser1->y_points[9] = sensorValue;
+      lv_chart_refresh(objects.chart_sensor_view);
+
+      sensorCounter = 0;
+    }
+  }
 
   if (waitCountSum > 1000)
   {

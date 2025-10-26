@@ -16,6 +16,7 @@ extern void action_motor_run_update_2(lv_event_t * e);
 extern void action_motor_param_update_0(lv_event_t * e);
 extern void action_motor_param_update_1(lv_event_t * e);
 extern void action_motor_param_update_2(lv_event_t * e);
+extern void action_sensor_param_update(lv_event_t * e);
 
 
 #ifdef __cplusplus

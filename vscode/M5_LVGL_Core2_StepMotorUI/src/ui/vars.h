@@ -20,7 +20,9 @@ enum FlowGlobalVariables {
     FLOW_GLOBAL_VARIABLE_CONFIG_TARGET_MOROT_INDEX = 2,
     FLOW_GLOBAL_VARIABLE_MOTORS_CONF = 3,
     FLOW_GLOBAL_VARIABLE_MOTORS_PV = 4,
-    FLOW_GLOBAL_VARIABLE_MOTORS_RUN = 5
+    FLOW_GLOBAL_VARIABLE_MOTORS_RUN = 5,
+    FLOW_GLOBAL_VARIABLE_SENSOR_CONFIG_TARGET_ITEM_LIST = 6,
+    FLOW_GLOBAL_VARIABLE_SENSOR_CONFIG_TARGET_INDEX = 7
 };
 
 // Native global variables
@@ -61,6 +63,18 @@ extern bool get_var_motor_direction_rev_1();
 extern void set_var_motor_direction_rev_1(bool value);
 extern bool get_var_motor_direction_rev_2();
 extern void set_var_motor_direction_rev_2(bool value);
+extern int32_t get_var_sensor_value();
+extern void set_var_sensor_value(int32_t value);
+extern int32_t get_var_sensor_top_left_x();
+extern void set_var_sensor_top_left_x(int32_t value);
+extern int32_t get_var_sensor_top_left_y();
+extern void set_var_sensor_top_left_y(int32_t value);
+extern int32_t get_var_sensor_bottom_right_x();
+extern void set_var_sensor_bottom_right_x(int32_t value);
+extern int32_t get_var_sensor_bottom_right_y();
+extern void set_var_sensor_bottom_right_y(int32_t value);
+extern int32_t get_var_seensor_interval();
+extern void set_var_seensor_interval(int32_t value);
 
 
 #ifdef __cplusplus
