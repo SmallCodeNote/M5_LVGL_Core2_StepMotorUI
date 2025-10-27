@@ -12,6 +12,13 @@
 #include "sensor_control.h"
 #include "ui/screens.h"
 
+void modbusTask(void* pvParameters) {
+  while (true) {
+    handleModbusRequest();  // RS485_Read()をここで実行
+    vTaskDelay(10 / portTICK_PERIOD_MS);  // 軽い待機
+  }
+}
+
 void setup()
 {
   auto cfg = M5.config();
@@ -55,6 +62,9 @@ void setup()
   {
     chart_sensor_view_ser1->y_points[i] = 0;
   }
+  
+  RS485_Init();
+  xTaskCreate(modbusTask, "ModbusTask", 4096, NULL, 1, NULL);
 
   updateUI(motorParam);
   saveEEPROM(motorParam);
@@ -76,13 +86,10 @@ void update_chart_sensor_view_ser1()
 void loop()
 {
   M5.update();
-  // lv_timer_handler();
   lv_task_handler();
   ui_tick();
   vTaskDelay(waitCountUnit);
   waitCountSum += waitCountUnit;
-
-  //handleModbusRequest();
 
   if (tofSensorInterval > 0)
   {
