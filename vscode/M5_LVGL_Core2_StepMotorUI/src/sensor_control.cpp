@@ -2,11 +2,16 @@
 #include <M5Unified.h>
 #include <Wire.h>
 #include <VL53L1X.h>
+#include <EEPROM.h>
+
 #include "sensor_control.h"
+#include "main.h"
 
 VL53L1X tofSensor;
-int tofSensorInterval = 1000;
+SensorParam sensorParam;
+
 lv_chart_series_t * chart_sensor_view_ser1;
+
 
 const uint8_t spadMap[16][16] = {
   { 128,136,144,152,160,168,176,184,192,200,208,216,224,232,240,248 },
@@ -27,34 +32,64 @@ const uint8_t spadMap[16][16] = {
   { 120,112,104, 96, 88, 80, 72, 64, 56, 48, 40, 32, 24, 16,  8,  0 }
 };
 
-void setupSensorROI(int topLeftX, int topLeftY, int bottomRightX, int bottomRightY) {
-  // 安全な範囲に制限（最大14まで）
-  topLeftX = constrain(topLeftX, 0, 14);
-  topLeftY = constrain(topLeftY, 0, 14);
-  bottomRightX = constrain(bottomRightX, topLeftX + 1, 15);
-  bottomRightY = constrain(bottomRightY, topLeftY + 1, 15);
+int EEPROM_ADDRESS_SPRM = 0;
+int EEPROM_SIZE_SPRM = sizeof(SensorParam);
+uint32_t EEPROM_ID_SPRM = 0x534E5352; // 'SNSR'
+uint8_t EEPROM_VERSION_SPRM = 1; 
 
-  int roiWidth = bottomRightX - topLeftX + 1;
-  int roiHeight = bottomRightY - topLeftY + 1;
-
-  // 偶数に丸める
-  if (roiWidth % 2 != 0) roiWidth--;
-  if (roiHeight % 2 != 0) roiHeight--;
-
-  // 中心座標
-  int centerX = topLeftX + roiWidth / 2;
-  int centerY = topLeftY + roiHeight / 2;
-
-  // 範囲チェック（最大15）
-  centerX = constrain(centerX, 0, 15);
-  centerY = constrain(centerY, 0, 15);
-
-  uint8_t spadNumber = spadMap[centerY][centerX];
-
-  tofSensor.setROISize(roiWidth, roiHeight);
-  tofSensor.setROICenter(spadNumber);
+SensorParam defaultSensorParam() {
+  SensorParam s;
+  s.id = EEPROM_ID_SPRM;
+  s.version = EEPROM_VERSION_SPRM;
+  s.topLeftX = 0;
+  s.topLeftY = 0;
+  s.bottomRightX = 14;
+  s.bottomRightY = 14;
+  s.interval = 500;
+  return s;
 }
 
+void saveEEPROM(const SensorParam &params)
+{
+    if (inUpdateCall)
+        return;
+
+    EEPROM.begin(EEPROM_SIZE_SPRM);
+    EEPROM.put(EEPROM_ADDRESS_SPRM, params);
+    EEPROM.commit(); // for ESP32
+    EEPROM.end();
+
+    Serial.println("[EEPROM] Saved sensor parameters:");
+    Serial.printf("  topLeftX = %d\n", params.topLeftX);
+    Serial.printf("  topLeftY = %d\n", params.topLeftY);
+    Serial.printf("  bottomRightX = %d\n", params.bottomRightX);
+    Serial.printf("  bottomRightY = %d\n", params.bottomRightY);
+    Serial.printf("  interval = %d\n", params.interval);
+}
+
+SensorParam loadSPRMfromEEPROM()
+{
+    SensorParam params;
+    EEPROM.begin(EEPROM_SIZE_SPRM);
+    EEPROM.get(EEPROM_ADDRESS_SPRM, params);
+    EEPROM.end();
+
+    if (params.id == EEPROM_ID_SPRM && params.version == EEPROM_VERSION_SPRM)
+    {
+        Serial.println("[EEPROM] Loaded sensor parameters:");
+        Serial.printf("  topLeftX = %d\n", params.topLeftX);
+        Serial.printf("  topLeftY = %d\n", params.topLeftY);
+        Serial.printf("  bottomRightX = %d\n", params.bottomRightX);
+        Serial.printf("  bottomRightY = %d\n", params.bottomRightY);
+        Serial.printf("  interval = %d\n", params.interval);
+    }
+    else
+    {
+        Serial.println("[EEPROM] Loaded sensor parameters error:");
+        return defaultSensorParam();
+    }
+    return params;
+}
 
 void setupSensor()
 {
@@ -71,3 +106,50 @@ void setupSensor()
     tofSensor.setMeasurementTimingBudget(50000); // 測定周期（μs）
     tofSensor.startContinuous(50);
 }
+
+void setupSensorROI(int topLeftX, int topLeftY, int bottomRightX, int bottomRightY) {
+  topLeftX = constrain(topLeftX, 0, 14);
+  topLeftY = constrain(topLeftY, 0, 14);
+  bottomRightX = constrain(bottomRightX, topLeftX + 1, 15);
+  bottomRightY = constrain(bottomRightY, topLeftY + 1, 15);
+
+  int roiWidth = bottomRightX - topLeftX + 1;
+  int roiHeight = bottomRightY - topLeftY + 1;
+
+  if (roiWidth % 2 != 0) roiWidth--;
+  if (roiHeight % 2 != 0) roiHeight--;
+
+  int centerX = topLeftX + roiWidth / 2;
+  int centerY = topLeftY + roiHeight / 2;
+
+  centerX = constrain(centerX, 0, 15);
+  centerY = constrain(centerY, 0, 15);
+
+  uint8_t spadNumber = spadMap[centerY][centerX];
+
+  tofSensor.setROISize(roiWidth, roiHeight);
+  tofSensor.setROICenter(spadNumber);
+}
+
+
+void updateUI(const SensorParam &params)
+{
+    inUpdateCall = true;
+
+    set_var_sensor_top_left_x(params.topLeftX);
+    set_var_sensor_top_left_y(params.topLeftY);
+    set_var_sensor_bottom_right_x(params.bottomRightX);
+    set_var_sensor_bottom_right_y(params.bottomRightY);
+    set_var_sensor_interval(params.interval);
+
+
+    Serial.println("[UI] Updated sensor parameters:");
+    Serial.printf("  topLeftX = %d\n", params.topLeftX);
+    Serial.printf("  topLeftY = %d\n", params.topLeftY);
+    Serial.printf("  bottomRightX = %d\n", params.bottomRightX);
+    Serial.printf("  bottomRightY = %d\n", params.bottomRightY);
+    Serial.printf("  interval = %d\n", params.interval);
+
+    inUpdateCall = false;
+}
+

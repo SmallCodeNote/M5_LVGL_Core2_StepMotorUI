@@ -81,7 +81,7 @@ int32_t sensor_top_left_x;
 int32_t sensor_top_left_y;
 int32_t sensor_bottom_right_x;
 int32_t sensor_bottom_right_y;
-int32_t seensor_interval;
+int32_t sensor_interval;
 
 extern "C" int32_t get_var_sensor_value() { return sensor_value; }
 extern "C" void set_var_sensor_value(int32_t value) { sensor_value = value; }
@@ -98,5 +98,5 @@ extern "C" void set_var_sensor_bottom_right_x(int32_t value) { sensor_bottom_rig
 extern "C" int32_t get_var_sensor_bottom_right_y() { return sensor_bottom_right_y; }
 extern "C" void set_var_sensor_bottom_right_y(int32_t value) { sensor_bottom_right_y = value; }
 
-extern "C" int32_t get_var_seensor_interval() { return seensor_interval; }
-extern "C" void set_var_seensor_interval(int32_t value) { seensor_interval = value; }
+extern "C" int32_t get_var_sensor_interval() { return sensor_interval;}
+extern "C" void set_var_sensor_interval(int32_t value) { sensor_interval = value;}

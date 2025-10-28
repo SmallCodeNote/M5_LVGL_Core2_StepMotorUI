@@ -2156,7 +2156,7 @@ native_var_t native_vars[] = {
     { NATIVE_VAR_TYPE_INTEGER, get_var_sensor_top_left_y, set_var_sensor_top_left_y }, 
     { NATIVE_VAR_TYPE_INTEGER, get_var_sensor_bottom_right_x, set_var_sensor_bottom_right_x }, 
     { NATIVE_VAR_TYPE_INTEGER, get_var_sensor_bottom_right_y, set_var_sensor_bottom_right_y }, 
-    { NATIVE_VAR_TYPE_INTEGER, get_var_seensor_interval, set_var_seensor_interval }, 
+    { NATIVE_VAR_TYPE_INTEGER, get_var_sensor_interval, set_var_sensor_interval }, 
 };
 
 

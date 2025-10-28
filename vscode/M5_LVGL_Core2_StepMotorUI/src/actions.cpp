@@ -1,10 +1,13 @@
 #include <Arduino.h>
 #include <M5Unified.h>
+
 #include "ui/actions.h"
 #include "ui/vars.h"
+
 #include "motor_control.h"
-#include "my_debug.h"
 #include "sensor_control.h"
+
+#include "my_debug.h"
 
 extern "C" void action_motor_sv_update_0(lv_event_t *e)
 {
@@ -125,19 +128,27 @@ extern "C" void action_motor_param_update_2(lv_event_t *e)
     }
 }
 
-
-
 extern "C" void action_sensor_param_update(lv_event_t *e)
 {
     int topLeftX = get_var_sensor_top_left_x();
     int topLeftY = get_var_sensor_top_left_y();
     int bottomRightX = get_var_sensor_bottom_right_x();
     int bottomRightY = get_var_sensor_bottom_right_y();
-    int interval = get_var_seensor_interval();
+    int interval = get_var_sensor_interval();
 
-    tofSensorInterval = interval;
+    sensorParam.topLeftX = topLeftX;
+    sensorParam.topLeftX = topLeftX;
+    sensorParam.topLeftY = topLeftY;
+    sensorParam.bottomRightX = bottomRightX;
+    sensorParam.bottomRightY = bottomRightY;
+    sensorParam.interval = interval;
+
+    Serial.println("[action_sensor_param_update]:");
+    Serial.printf("  topLeftX = %d\n", sensorParam.topLeftX);
+    Serial.printf("  topLeftY = %d\n", sensorParam.topLeftY);
+    Serial.printf("  bottomRightX = %d\n", sensorParam.bottomRightX);
+    Serial.printf("  bottomRightY = %d\n", sensorParam.bottomRightY);
+    Serial.printf("  interval = %d\n", sensorParam.interval);
 
     setupSensorROI(topLeftX, topLeftY, bottomRightX, bottomRightY);
-
-
 }

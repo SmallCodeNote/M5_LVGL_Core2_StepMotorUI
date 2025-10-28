@@ -4,6 +4,7 @@
 #include "motor_control.h"
 #include "ui/vars.h"
 
+#include "main.h"
 FastAccelStepperEngine motorController = FastAccelStepperEngine();
 FastAccelStepper *motorX = nullptr;
 FastAccelStepper *motorY = nullptr;
@@ -42,22 +43,22 @@ size_t RS485_Read(uint8_t *buffer, size_t bufferSize, uint32_t timeout = 100)
 
 bool motorEnabled = false; // flag to check if the motor is enabled
 
-const int EEPROM_ADDRESS = 0;
-const int EEPROM_SIZE = sizeof(MotorsParam);
-
-bool inUpdateCall = false;
-
 bool run_0 = false;
 bool run_1 = false;
 bool run_2 = false;
+
+int EEPROM_ADDRESS_MPRM = 0;
+int EEPROM_SIZE_MPRM = sizeof(MotorsParam);
+uint32_t EEPROM_ID_MPRM = 0x4D50524D; // 'MPRM'
+uint8_t EEPROM_VERSION_MPRM = 1; 
 
 void saveEEPROM(const MotorsParam &params)
 {
     if (inUpdateCall)
         return;
 
-    EEPROM.begin(EEPROM_SIZE);
-    EEPROM.put(EEPROM_ADDRESS, params);
+    EEPROM.begin(EEPROM_SIZE_MPRM);
+    EEPROM.put(EEPROM_ADDRESS_MPRM, params);
     EEPROM.commit(); // for ESP32
     EEPROM.end();
 
@@ -79,31 +80,51 @@ void saveEEPROM(const MotorsParam &params)
     Serial.printf("  motor_direction_rev_2 = %s\n", params.rev_2 ? "true" : "false");
 }
 
-MotorsParam loadEEPROM()
+MotorsParam loadMPRMfromEEPROM()
 {
     MotorsParam params;
-    EEPROM.begin(EEPROM_SIZE);
-    EEPROM.get(EEPROM_ADDRESS, params);
+    EEPROM.begin(EEPROM_SIZE_MPRM);
+    EEPROM.get(EEPROM_ADDRESS_MPRM, params);
     EEPROM.end();
 
-    Serial.println("[EEPROM] Loaded motor parameters:");
-    Serial.printf("  motor_ppr_0 = %d\n", params.ppr_0);
-    Serial.printf("  motor_ppr_1 = %d\n", params.ppr_1);
-    Serial.printf("  motor_ppr_2 = %d\n", params.ppr_2);
+    if (params.id == EEPROM_ID_MPRM && params.version == EEPROM_VERSION_MPRM)
+    {
 
-    Serial.printf("  motor_acceleration_0 = %d\n", params.acc_rpm_0);
-    Serial.printf("  motor_acceleration_1 = %d\n", params.acc_rpm_1);
-    Serial.printf("  motor_acceleration_2 = %d\n", params.acc_rpm_2);
+        Serial.println("[EEPROM] Loaded motor parameters:");
+        Serial.printf("  motor_ppr_0 = %d\n", params.ppr_0);
+        Serial.printf("  motor_ppr_1 = %d\n", params.ppr_1);
+        Serial.printf("  motor_ppr_2 = %d\n", params.ppr_2);
 
-    Serial.printf("  motor_sv_0 = %d\n", params.sv_0);
-    Serial.printf("  motor_sv_1 = %d\n", params.sv_1);
-    Serial.printf("  motor_sv_2 = %d\n", params.sv_2);
+        Serial.printf("  motor_acceleration_0 = %d\n", params.acc_rpm_0);
+        Serial.printf("  motor_acceleration_1 = %d\n", params.acc_rpm_1);
+        Serial.printf("  motor_acceleration_2 = %d\n", params.acc_rpm_2);
 
-    Serial.printf("  motor_direction_rev_0 = %s\n", params.rev_0 ? "true" : "false");
-    Serial.printf("  motor_direction_rev_1 = %s\n", params.rev_1 ? "true" : "false");
-    Serial.printf("  motor_direction_rev_2 = %s\n", params.rev_2 ? "true" : "false");
+        Serial.printf("  motor_sv_0 = %d\n", params.sv_0);
+        Serial.printf("  motor_sv_1 = %d\n", params.sv_1);
+        Serial.printf("  motor_sv_2 = %d\n", params.sv_2);
 
+        Serial.printf("  motor_direction_rev_0 = %s\n", params.rev_0 ? "true" : "false");
+        Serial.printf("  motor_direction_rev_1 = %s\n", params.rev_1 ? "true" : "false");
+        Serial.printf("  motor_direction_rev_2 = %s\n", params.rev_2 ? "true" : "false");
+    }
+    else
+    {
+        Serial.println("[EEPROM] Loaded motor parameters error:");
+        return defaultMotorsParam();
+    }
     return params;
+}
+
+MotorsParam defaultMotorsParam()
+{
+    MotorsParam p;
+    p.id = EEPROM_ID_MPRM;
+    p.version = EEPROM_VERSION_MPRM;
+    p.ppr_0 = p.ppr_1 = p.ppr_2 = 200;
+    p.acc_rpm_0 = p.acc_rpm_1 = p.acc_rpm_2 = 20;
+    p.sv_0 = p.sv_1 = p.sv_2 = 0;
+    p.rev_0 = p.rev_1 = p.rev_2 = false;
+    return p;
 }
 
 void updateUI(const MotorsParam &params)

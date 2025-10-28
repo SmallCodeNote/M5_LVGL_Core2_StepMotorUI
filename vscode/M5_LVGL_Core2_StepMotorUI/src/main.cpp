@@ -3,24 +3,36 @@
 #include <Module_Stepmotor.h>
 #include <FastAccelStepper.h>
 
+#include "motor_control.h"
+#include "sensor_control.h"
+
 #include "ui/ui.h"
 #include "ui/eez-flow.h"
-#include "my_common_code.h"
-#include "motor_control.h"
-
-#include "my_debug.h"
-#include "sensor_control.h"
 #include "ui/screens.h"
 
-void modbusTask(void* pvParameters) {
-  while (true) {
-    handleModbusRequest();  // RS485_Read()をここで実行
-    vTaskDelay(10 / portTICK_PERIOD_MS);  // 軽い待機
+#include "my_common_code.h"
+#include "my_debug.h"
+#include "main.h"
+
+bool inUpdateCall = false;
+
+void modbusTask(void *pvParameters)
+{
+  while (true)
+  {
+    handleModbusRequest(); // RS485_Read()
+    vTaskDelay(10 / portTICK_PERIOD_MS);
   }
 }
 
 void setup()
 {
+  EEPROM_ADDRESS_MPRM = 0;
+  EEPROM_SIZE_MPRM = sizeof(motorParam);
+
+  EEPROM_ADDRESS_SPRM = sizeof(MotorsParam);
+  EEPROM_SIZE_SPRM = sizeof(SensorParam);
+
   auto cfg = M5.config();
   cfg.internal_imu = false;
   M5.begin(cfg);
@@ -34,7 +46,7 @@ void setup()
   lv_init();
   ui_init();
 
-  motorParam = loadEEPROM();
+  motorParam = loadMPRMfromEEPROM();
   motorController.init();
 
   setupMotor(&motorX, X_STEP_PIN, X_DIR_PIN, motorParam.acc_rpm_0, motorParam.ppr_0);
@@ -53,6 +65,8 @@ void setup()
   motorDriver.enableMotor(0);
   motorEnabled = false;
 
+  //SensorSetup =================
+  sensorParam = loadSPRMfromEEPROM();
   setupSensor();
 
   lv_chart_set_range(objects.chart_sensor_view, LV_CHART_AXIS_PRIMARY_Y, 0, 150);
@@ -62,12 +76,15 @@ void setup()
   {
     chart_sensor_view_ser1->y_points[i] = 0;
   }
-  
+
   RS485_Init();
   xTaskCreate(modbusTask, "ModbusTask", 4096, NULL, 1, NULL);
 
   updateUI(motorParam);
   saveEEPROM(motorParam);
+
+  updateUI(sensorParam);
+  saveEEPROM(sensorParam);
 }
 
 int waitCountUnit = 10;
@@ -91,10 +108,10 @@ void loop()
   vTaskDelay(waitCountUnit);
   waitCountSum += waitCountUnit;
 
-  if (tofSensorInterval > 0)
+  if (sensorParam.interval > 0)
   {
     sensorCounter += waitCountUnit;
-    if (sensorCounter >= tofSensorInterval)
+    if (sensorCounter >= sensorParam.interval)
     {
       int sensorValue = (int)tofSensor.read();
       set_var_sensor_value(sensorValue);

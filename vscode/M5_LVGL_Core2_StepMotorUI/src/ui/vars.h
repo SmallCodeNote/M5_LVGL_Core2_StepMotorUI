@@ -73,8 +73,8 @@ extern int32_t get_var_sensor_bottom_right_x();
 extern void set_var_sensor_bottom_right_x(int32_t value);
 extern int32_t get_var_sensor_bottom_right_y();
 extern void set_var_sensor_bottom_right_y(int32_t value);
-extern int32_t get_var_seensor_interval();
-extern void set_var_seensor_interval(int32_t value);
+extern int32_t get_var_sensor_interval();
+extern void set_var_sensor_interval(int32_t value);
 
 
 #ifdef __cplusplus
