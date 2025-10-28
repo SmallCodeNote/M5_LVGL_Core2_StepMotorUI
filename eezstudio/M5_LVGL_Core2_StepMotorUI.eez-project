@@ -340,7 +340,7 @@
         "objID": "acb3a33c-f5f7-4efe-ea1c-458121882c53",
         "name": "SensorBottomRightX",
         "type": "integer",
-        "defaultValue": "16",
+        "defaultValue": "14",
         "persistent": false,
         "native": true
       },
@@ -348,13 +348,13 @@
         "objID": "41687b6d-ac6a-4dc8-91c8-188d306f5621",
         "name": "SensorBottomRightY",
         "type": "integer",
-        "defaultValue": "16",
+        "defaultValue": "14",
         "persistent": false,
         "native": true
       },
       {
         "objID": "c4daa4f3-8503-43f6-8aef-e7d7bd769bf9",
-        "name": "SeensorInterval",
+        "name": "SensorInterval",
         "type": "integer",
         "defaultValue": "100",
         "persistent": false,
@@ -8875,7 +8875,7 @@
               },
               "group": "",
               "groupIndex": 0,
-              "text": "SeensorInterval",
+              "text": "SensorInterval",
               "textType": "expression",
               "placeholder": "",
               "oneLineMode": false,
@@ -9560,7 +9560,7 @@
           "entries": [
             {
               "objID": "f88669ee-14b0-4435-96bb-fc9e4c56a4fa",
-              "variable": "SeensorInterval",
+              "variable": "SensorInterval",
               "value": "input"
             }
           ]
@@ -9574,7 +9574,7 @@
           "height": 106,
           "customInputs": [],
           "customOutputs": [],
-          "expression": "SensorConfigTargetIndex == 0 ? SensorTopLeftX :\nSensorConfigTargetIndex == 1 ? SensorTopLeftY :\nSensorConfigTargetIndex == 2 ? SensorBottomRightX :\nSensorConfigTargetIndex == 3 ? SensorBottomRightY :\nSensorConfigTargetIndex == 4 ? SeensorInterval : 0"
+          "expression": "SensorConfigTargetIndex == 0 ? SensorTopLeftX :\nSensorConfigTargetIndex == 1 ? SensorTopLeftY :\nSensorConfigTargetIndex == 2 ? SensorBottomRightX :\nSensorConfigTargetIndex == 3 ? SensorBottomRightY :\nSensorConfigTargetIndex == 4 ? SensorInterval : 0"
         },
         {
           "objID": "1646006a-3aa5-49a3-f615-213651d6466a",
